@@ -82,3 +82,26 @@ no split. Offset ~233 kb.
 
 Reminder: Roadmap ChromHMM work stays in hg19. Everything else
 (ENCODE, UniBind, ReMap, phyloP, JASPAR) uses hg38.
+
+## Part 1.4 CORRECTED — hg38 coordinates via BLAT
+
+First liftover attempt gave chr11:66,257,086-66,257,302. **Wrong.**
+Sequence at those coords did not match the confirmed hg19 217-mer.
+Its revcomp mapped to hg19 66,024,426-66,024,642 — 131 bp off.
+
+**BLAT of the confirmed hg19 217-mer against hg38:**
+chr11:66,256,955-66,257,171, MINUS strand, 100% identity,
+full-length (query 1-217), span 217. Unique hit; next best is 39 bp.
+
+**-> Correct hg38 interval: chr11:66,256,955-66,257,171**
+BED: chr11  66256954  66257171
+
+**The locus is INVERTED between GRCh37 and GRCh38.** hg19 plus
+strand = hg38 minus strand. Verified: under this inversion,
+hg19 66,024,426-66,024,642 maps to hg38 66,257,086-66,257,302,
+which is exactly what the bad liftover returned.
+
+**Rule for this project:** canonical sequence = hg19 plus-strand
+217-mer (raw/klc2_del_217bp.fa). Matches published amplicon
+orientation. Do not substitute the hg38 plus-strand version.
+Verify any coordinate conversion by BLAT, not liftover alone.

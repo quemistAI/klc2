@@ -105,3 +105,9 @@ which is exactly what the bad liftover returned.
 217-mer (raw/klc2_del_217bp.fa). Matches published amplicon
 orientation. Do not substitute the hg38 plus-strand version.
 Verify any coordinate conversion by BLAT, not liftover alone.
+
+**hg38 sequence verified:** chr11:66,256,955-66,257,171 plus strand
+is the exact revcomp of the validated hg19 217-mer (217/217, no
+mismatches). Confirms BLAT coords and the inter-build inversion.
+Saved as raw/klc2_del_217bp_hg38.fa — this is the FIMO input.
+GC content 54.4% (genome avg ~41%). Check CpG island overlap in Part 3.

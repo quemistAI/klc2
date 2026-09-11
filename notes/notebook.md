@@ -47,7 +47,7 @@ actual breakpoint sequence before designing any constructs.
 
 Primers from Table S3 pair 1 → **chr11:66,024,368-66,024,831, 464 bp**
 Matches the wild-type band in Fig S3C exactly. Primers confirmed.
-Published deletion (66,024,557-66,024,773) sits inside this amplicon
+nano notes/notebook.mdPublished deletion (66,024,557-66,024,773) sits inside this amplicon
 with 189 bp of 5' flank and 58 bp of 3' flank.
 
 **Breakpoint analysis (mapped published coords onto amplicon seq):**
@@ -248,3 +248,111 @@ Confidence: [medium, fibroblasts and blood may be closer than with neural accord
 Caveat I already expect: motor neurons are absent from Roadmap.
 A null or quiescent result may reflect missing cell types rather
 than absence of function.
+
+### Roadmap EID metadata verification — 2026-09-11
+
+```
+E053	#FFD924	Cortex derived primary cultured neurospheres
+E054	#FFD924	Ganglion Eminence derived primary cultured neurospheres
+E055	#FF9D0C	Foreskin Fibroblast Primary Cells skin01
+E056	#FF9D0C	Foreskin Fibroblast Primary Cells skin02
+E062	#55A354	Primary mononuclear cells from peripheral blood
+E073	#C5912B	Brain_Dorsolateral_Prefrontal_Cortex
+E081	#C5912B	Fetal Brain Male
+E116	#000000	GM12878 Lymphoblastoid Cells
+```
+## Part 4 RESULT
+
+| EID | Tissue | Group | State |
+|-----|--------|-------|-------|
+| E053 | Neurosphere ctx | Neural | 2_TssAFlnk |
+| E054 | Neurosphere GE | Neural | 1_TssA |
+| E073 | DLPFC | Neural | 2_TssAFlnk |
+| E081 | Fetal brain | Neural | 2_TssAFlnk |
+| E055 | Fibroblast | Fibro | 2_TssAFlnk |
+| E056 | Fibroblast | Fibro | 2_TssAFlnk + 1_TssA |
+| E062 | PBMC primary | Blood | **11_BivFlnk** |
+| E116 | GM12878 | Blood | 2_TssAFlnk + 1_TssA |
+
+**Prediction WRONG.** Predicted repressive states in neural/fibro.
+Got active promoter states in 7/8. No ReprPC anywhere.
+
+**Single lineage difference: E062 primary blood = bivalent (poised).**
+Aligns with Melo: active promoter in tissues where deletion raises
+KLC2 (neural, fibroblast); poised where it doesn't (blood).
+Different mechanism than hypothesized, same lineage split.
+
+**Caveat 1:** E116 (also blood) shows active states, contradicting
+E062. GM12878 is EBV-transformed — chromatin altered by
+transformation. E062 (primary) more trustworthy, but n=1.
+
+**Caveat 2 — RESOLUTION.** Segments are 200-1800 bp; element is
+217 bp sitting ~100 bp from the KLC2 TSS. ChromHMM 200-bp bins
+cannot separate element from promoter here. These calls largely
+report PROMOTER state. Must state this explicitly in any writeup.
+
+**Next:** (1) expand to 6-8 primary blood epigenomes (E029-E051) to
+test whether bivalency reproduces. (2) Move to continuous H3K27me3 /
+H3K4me1 / H3K4me3 bigWig signal for base-level resolution.
+
+## Part 4 FINAL — expanded panel (n=16)
+
+**Threshold (prespecified): 6+/8 blood bivalent. RESULT: 4/9. FAILED.**
+
+Myeloid:  E029 EnhBiv | E030 ReprPC+EnhBiv | E124 EnhBiv+BivFlnk  -> 3/3
+Mixed:    E062 PBMC BivFlnk (contains monocytes)
+Lymphoid: E032, E034, E046, E047 all TssAFlnk/TssA              -> 0/4
+Stem:     E035 TssAFlnk
+Neural:   E053 E054 E073 E081 all active
+Fibro:    E055 E056 all active
+GM12878:  E116 active (transformed)
+
+**Unhypothesized pattern: myeloid = bivalent/Polycomb, lymphoid =
+active.** E124 independently replicates E029. HSC active, so not a
+stem effect. Coherent, but POST HOC — not a finding until
+prespecified and tested in an independent panel.
+
+**Does NOT explain SPOAN.** Melo: neural+fibro overexpress, blood
+doesn't. Here neural, fibro, and lymphoid blood are all
+indistinguishable (active promoter). The lineage boundary found runs
+WITHIN blood — orthogonal to the disease.
+
+**Technical:** E030 ReprPC segment (66,022,200-66,024,600) overlaps
+only ~44 bp of the element before switching to EnhBiv. Score as
+bivalent.
+
+**Conclusion: ChromHMM at 200-bp resolution cannot answer this
+question** at an element ~100 bp from an active TSS. Segment calls
+are
+
+### Part 5 threshold (prespecified)
+
+The element is distinguishable from the promoter if H3K4me3 signal
+over the 217 bp is <50% of its peak value at the KLC2 TSS in the
+same epigenome.
+
+The element has its own regulatory signature if H3K4me1 exceeds
+H3K4me3 over the interval in at least 3 of 5 epigenomes.
+
+If H3K4me3 is uniformly high across element and promoter in all
+five, the element is not separable from the promoter by any
+reference chromatin data, and the reporter assay becomes the only
+route.
+
+### Part 5b prediction — written before downloading
+
+Testing whether the myeloid H3K27me3 signal replicates.
+
+Predicted mean fold-change over the 217-bp element:
+- Myeloid (E030 neutrophil, E124 CD14+ monocyte):
+    H3K27me3 ____  H3K4me3 ____
+- Lymphoid (E032 B cell, E034 T cell, E047 CD8+ naive):
+    H3K27me3 ____  H3K4me3 ____
+
+Threshold for calling it replicated:
+H3K27me3 > 10 in all 3 myeloid AND < 3 in all lymphoid.
+H3K4me3 < 3 in all myeloid AND > 8 in all lymphoid.
+
+If lymphoid looks like myeloid, the boundary is blood-vs-other,
+not myeloid-vs-lymphoid, and E029 was not special.
+

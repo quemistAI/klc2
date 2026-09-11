@@ -1,0 +1,10 @@
+eid,label,mark,val
+E029,Myeloid - monocyte,H3K27me3,19.451
+E029,Myeloid - monocyte,H3K4me1,6.939
+E029,Myeloid - monocyte,H3K4me3,1.297
+E055,Fibroblast,H3K27me3,1.12
+E055,Fibroblast,H3K4me1,5.951
+E055,Fibroblast,H3K4me3,41.329
+E073,Neural - DLPFC,H3K27me3,1.284
+E073,Neural - DLPFC,H3K4me1,3.218
+E073,Neural - DLPFC,H3K4me3,11.918

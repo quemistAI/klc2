@@ -2,9 +2,24 @@ eid,label,mark,val
 E029,Myeloid - monocyte,H3K27me3,19.451
 E029,Myeloid - monocyte,H3K4me1,6.939
 E029,Myeloid - monocyte,H3K4me3,1.297
+E030,Myeloid - neutrophil,H3K27me3,29.435
+E030,Myeloid - neutrophil,H3K4me1,6.732
+E030,Myeloid - neutrophil,H3K4me3,7.264
+E032,Lymphoid - B cell,H3K27me3,0.135
+E032,Lymphoid - B cell,H3K4me1,5.16
+E032,Lymphoid - B cell,H3K4me3,27.251
+E034,Lymphoid - T cell,H3K27me3,0.808
+E034,Lymphoid - T cell,H3K4me1,7.847
+E034,Lymphoid - T cell,H3K4me3,29.623
+E047,Lymphoid - CD8+ naive,H3K27me3,0.437
+E047,Lymphoid - CD8+ naive,H3K4me1,1.303
+E047,Lymphoid - CD8+ naive,H3K4me3,3.9
 E055,Fibroblast,H3K27me3,1.12
 E055,Fibroblast,H3K4me1,5.951
 E055,Fibroblast,H3K4me3,41.329
 E073,Neural - DLPFC,H3K27me3,1.284
 E073,Neural - DLPFC,H3K4me1,3.218
 E073,Neural - DLPFC,H3K4me3,11.918
+E124,Myeloid - CD14+ monocyte,H3K27me3,35.05
+E124,Myeloid - CD14+ monocyte,H3K4me1,7.381
+E124,Myeloid - CD14+ monocyte,H3K4me3,10.581

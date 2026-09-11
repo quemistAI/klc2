@@ -1,0 +1,4 @@
+python 3.12.14
+pyBigWig 0.3.25
+pandas 3.0.5
+matplotlib 3.8.4

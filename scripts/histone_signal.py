@@ -6,6 +6,11 @@ EIDS = {
     "E073": "Neural - DLPFC",
     "E055": "Fibroblast",
     "E029": "Myeloid - monocyte",
+    "E030": "Myeloid - neutrophil",
+    "E124": "Myeloid - CD14+ monocyte",
+    "E032": "Lymphoid - B cell",
+    "E034": "Lymphoid - T cell",
+    "E047": "Lymphoid - CD8+ naive",
 }
 MARKS = ["H3K4me3", "H3K4me1", "H3K27me3"]
 
@@ -42,7 +47,7 @@ print("\nMean fold-change over the 217-bp element:")
 print(summary.to_string(index=False))
 summary.to_csv("processed/histone_element_means.csv", index=False)
 
-fig, axes = plt.subplots(len(EIDS), 1, figsize=(10, 8), sharex=True)
+fig, axes = plt.subplots(len(EIDS), 1, figsize=(10, 18), sharex=True)
 for ax, (eid, label) in zip(axes, EIDS.items()):
     sub = df[df.eid == eid]
     for mark in MARKS:

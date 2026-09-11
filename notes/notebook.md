@@ -356,3 +356,90 @@ H3K4me3 < 3 in all myeloid AND > 8 in all lymphoid.
 If lymphoid looks like myeloid, the boundary is blood-vs-other,
 not myeloid-vs-lymphoid, and E029 was not special.
 
+## Part 5b RESULT — myeloid H3K27me3 REPLICATES
+
+H3K27me3 mean fold-change over the 217-bp element:
+  Myeloid:    E029 19.45 | E030 29.44 | E124 35.05
+  Lymphoid:   E032 0.14  | E034 0.81  | E047 0.44
+  Fibroblast: E055 1.12
+  Neural:     E073 1.28
+
+**No overlap. ~15x gap between lowest myeloid and highest other.**
+Threshold (>10 all myeloid, <3 all lymphoid): MET.
+
+H3K4me3 criterion (<3 in myeloid): **FAILED** — E030 7.26,
+E124 10.58. High H3K27me3 + substantial H3K4me3 = BIVALENT, not
+silenced. Matches ChromHMM 12_EnhBiv / 11_BivFlnk independently.
+
+**Refined claim: the element carries a bivalent chromatin domain
+specific to the myeloid lineage.** Confirmed in two independent
+data types (segmented states, continuous signal).
+
+Caveat: E047 low across all marks — possible weak-signal epigenome.
+Caveat: still POST HOC and still orthogonal to SPOAN — neural and
+fibroblast, the tissues where deletion raises KLC2, are
+indistinguishable from lymphoid here.
+
+## Part 5b SPATIAL — broad domain, not a peak
+
+H3K27me3 in myeloid (E029, E030, E124) forms a BROAD ~1 kb domain
+from ~66,023,800 rising through the element and terminating
+sharply at ~66,024,800 where H3K4me3 promoter signal begins.
+**Not a discrete peak over the 217 bp.**
+
+**Claim must be narrowed to:** the element lies within a
+myeloid-specific H3K27me3 domain upstream of the KLC2 promoter.
+Any sequence in that ~1 kb would show the same signal; the 217 bp
+is NOT distinguished within it.
+
+H3K4me1 in myeloid (6-7) ≈ fibroblast (6.0). The "bivalent" reading
+rests on H3K4me3, which is visibly promoter signal extending
+leftward. Soften bivalency language.
+
+Supports Part 3 architecture: sharp H3K4me3 onset at the right edge
+of the element in all 8 epigenomes = the promoter boundary.
+
+E047 weak epigenome (y-max 30 vs 125 elsewhere). Downweight.
+
+### CTCF motif — ReMap binding evidence: SUPPORTED
+
+Motif (FIMO pos 81-111) = hg38 chr11:66,257,035-66,257,065,
+center 66,257,050.
+
+| Dataset | Position | Width | Midpoint | Dist |
+|---|---|---|---|---|
+| GSE117508 cortical-interneuron KCl-neg | 66,256,969-66,257,149 | 181 | 66,257,059 | 9 |
+| GSE117508 cortical-interneuron KCl-pos | 66,256,964-66,257,090 | 127 | 66,257,027 | 23 |
+| ENCSR000AQU DND41 | 66,256,926-66,257,247 | 322 | 66,257,087 | 37 |
+| GSE116862 hESC_D5 | 66,256,971-66,257,489 | 519 | 66,257,230 | 180 |
+| ENCSR072EUE OCI-Ly1 | 66,257,014-66,257,503 | 490 | 66,257,259 | 209 |
+
+**The two NARROWEST peaks are centered on the motif, and both are
+NEURAL (cortical interneuron).** Broad peaks (hESC, OCI-Ly1) are
+centered on the KLC2 promoter instead. Narrow peak = precise
+localization.
+
+-> FIMO's top hit has independent ChIP-seq support in neural cells.
+-> **Insulation-loss model reinstated as best-supported mechanism.**
+
+CAVEATS: both cortical-interneuron datasets are from one study
+(GSE117508, KCl +/-), so one experiment observed twice, not two
+independent replications. CTCF binding =/= insulation; demonstrating
+that requires Hi-C/4C contact data, out of scope here.
+
+NOTE: this came from neural ChIP-seq — exactly the data the 2015
+analysis lacked.
+
+| TF | FIMO p | ReMap status |
+|----|--------|--------------|
+| CTCF | 1.6e-5 | **SUPPORTED** — 2 neural peaks centered 9 and 23 bp from motif |
+| REST | 8.4e-5 | **NOT supported** — 8 datasets in window (incl. neural, hippocampus); peaks cross the element with their edges, none centered on the motif at 66,256,979-998 |
+| ZNF701 | 1.6e-5 | Not assessed — minimal ChIP-seq coverage in ReMap |
+| ZKSCAN3 | 4.4e-5 | Not assessed — same |
+| ZNF528 | 1.8e-5 | Not assessed — same |
+
+CTCF is the only FIMO candidate with binding evidence localized to
+its motif. The REST negative is informative rather than absent:
+REST IS bound in this window in neural tissue, just not at the
+predicted site.
+

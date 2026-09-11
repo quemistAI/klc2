@@ -117,3 +117,62 @@ Distance from my interval (ends 66,257,171): ~7.6 kb.
 Too distant for a promoter-proximal antisense model. Demoted to
 footnote — would need Hi-C/4C contact evidence to revive.
 **KLC2-AS2**: [to check]
+
+### Question 3 — CpG island: NO OVERLAP (but shore-adjacent)
+
+**CpG island (hg38):** chr11:66,257,440-66,258,782
+- Size 1,343 bp | CpG count 120 | 66.1% C+G | obs/exp 0.83
+- Strong island; likely the KLC2 promoter (confirm strand/TSS)
+
+**My interval:** chr11:66,256,955-66,257,171
+**Gap:** 268 bp (66,257,172-66,257,439). No overlap.
+
+**Interpretation — element sits in the CpG island SHORE.**
+Shores (~2 kb flanking an island) are where most tissue-specific
+differential methylation occurs; island cores are typically
+unmethylated across tissues. A shore location is consistent with
+the lineage-restricted activity implied by Melo 2015 (blood vs
+fibroblast/MN difference).
+
+GC contrast: element 54.4% vs island 66.1% — element is GC-rich
+but distinct from the island core. Consistent with shore.
+
+**Follow-up:**
+- Confirm KLC2 strand and TSS position; is this island the promoter?
+- Distance from element to KLC2 TSS?
+- Check Roadmap/ENCODE WGBS methylation over the shore in neural
+  vs blood in Part 4 — shore methylation difference would be a
+  direct test.
+- Revises earlier note: element is NOT in a CpG island. Do not
+  weight CxxC-domain factors heavily in motif candidate ranking.
+
+### Part 3 — MAJOR reframe: bidirectional promoter architecture
+
+**ENSG00000255320 (ENST00000791493.1), GENCODE V50:**
+chr11:66,244,570-66,257,625 hg38 | minus strand | 3 exons | 13,056 bp
+| **No protein** -> lncRNA. TSS = 66,257,625 (high coord, minus strand).
+Likely = KLC2-AS2. **My element lies INSIDE this transcript (intronic).**
+
+**Locus architecture (L->R):**
+- element      66,256,955-66,257,171
+- KLC2 TSS     ~66,257,270 (PLUS strand, transcribes right)
+- CpG island   66,257,440-66,258,782
+- lncRNA TSS   66,257,625 (MINUS strand, transcribes left)
+
+-> **Divergent/bidirectional promoter.** Element is ~100 bp upstream
+of KLC2 TSS and ~450 bp from the lncRNA TSS.
+
+**CTCF (ReMap filtered):** peaks present in window but concentrated
+over the KLC2 promoter / CpG island, right of the element. Only wide
+peak tails reach into the interval. Element is NOT a dedicated CTCF
+site. Insulation-loss model demoted.
+
+**NEW LEADING HYPOTHESIS (revises Hypothesis E):**
+Element is an enhancer for the antisense lncRNA. Antisense
+transcription represses KLC2 in cis. Deletion -> less lncRNA ->
+more KLC2. Reconciles the S1B "enhancer" ChromHMM call with the
+observed overexpression, which no prior work has explained.
+DIRECT TEST: measure ENSG00000255320 in patient fibroblasts.
+
+**Caveat:** GENCODE track says "14 items filtered out" — confirm no
+transcripts are hidden before finalizing this architecture.

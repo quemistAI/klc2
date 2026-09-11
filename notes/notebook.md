@@ -111,3 +111,9 @@ is the exact revcomp of the validated hg19 217-mer (217/217, no
 mismatches). Confirms BLAT coords and the inter-build inversion.
 Saved as raw/klc2_del_217bp_hg38.fa — this is the FIMO input.
 GC content 54.4% (genome avg ~41%). Check CpG island overlap in Part 3.
+
+**KLC2-AS1**: chr11:66,264,777-66,265,666 (hg38), ENST00000530805.1
+Distance from my interval (ends 66,257,171): ~7.6 kb.
+Too distant for a promoter-proximal antisense model. Demoted to
+footnote — would need Hi-C/4C contact evidence to revive.
+**KLC2-AS2**: [to check]

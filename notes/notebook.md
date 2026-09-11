@@ -176,3 +176,75 @@ DIRECT TEST: measure ENSG00000255320 in patient fibroblasts.
 
 **Caveat:** GENCODE track says "14 items filtered out" — confirm no
 transcripts are hidden before finalizing this architecture.
+
+**GENCODE filter cleared (Tagged Sets: All, pseudogenes on):**
+13 lncRNA isoforms now visible, ALL ENSG00000255320, all minus
+strand. TSS cluster spans ~66,257,400-66,257,625 (multiple
+alternative starts, not one). **No transcript initiates inside
+the element.** Bidirectional-promoter model holds.
+
+13 annotated isoforms = well-supported locus, not a spurious call.
+Element is intronic to all of them.
+
+KLC2 side: only 2 isoforms have extended 5' ends reaching left
+toward the element; most start ~66,257,600+. State element-to-TSS
+distance per isoform, not as a single figure.
+
+Conservation unchanged: flat phyloP, mouse/dog/elephant alignment
+absent across the interval. Primate-specific.
+
+**Antisense identity resolved — THREE distinct loci:**
+| ENSG00000255320 | 66,244,570-66,257,625 | CONTAINS element | no symbol |
+| KLC2-AS1        | 66,264,777-66,265,666 | ~7.6 kb away     |
+| KLC2-AS2        | 66,267,635-66,268,129 | ~10.5 kb away    |
+(KLC2-AS2 = ENST00000533287.1, uc058dut.1)
+
+**ENSG00000255320 is NOT KLC2-AS2.** No HGNC symbol assigned.
+**Use the ENSG ID consistently. Never write KLC2-AS2 for it.**
+Unnamed 13-kb, 13-isoform lncRNA over a disease gene promoter —
+suggests an under-studied locus.
+
+### Step 3 — GTEx ENSG00000255320: HYPOTHESIS E REFUTED
+
+Expressed broadly ~2-5 TPM across ~50 tissues. Exceptions:
+- **ALL brain regions LOWEST on the plot (~0-1 TPM)** — cerebellum,
+  cortex, hippocampus, hypothalamus, putamen, substantia nigra,
+  amygdala, spinal cord
+- Cultured fibroblasts ~4 TPM (high end)
+- Whole blood ~2-3 TPM (ordinary)
+
+**Refutes antisense cis-repression model on two counts:**
+1. lncRNA is LOWEST in brain, but Melo found KLC2 OVEREXPRESSED in
+   motor neurons. Wrong direction.
+2. Fibroblasts ≈ blood here, but Melo's central finding is that
+   those tissues DIFFER for KLC2.
+
+**Hypothesis E dropped. Do not revive.**
+
+Reverting to primary model: element = lineage-restricted silencer
+acting on KLC2 directly. Unaffected by today's findings.
+Bidirectional-promoter architecture stands as a location finding,
+not a mechanism.
+
+Unexplained side observation (note only, do not build on):
+brain-specific depletion of this lncRNA at a locus where a
+non-coding deletion causes a brain disease.
+
+### PREDICTION for Part 4 — written before running the analysis
+
+Model: the 216-bp element is a silencer with lineage-restricted
+activity, acting on KLC2 directly.
+
+I predict the Roadmap ChromHMM overlap will show:
+- Neural (E073, E081, E053, E054): [E073]
+- Fibroblast (E055, E056): [either, possible E056]
+- Blood (E062, E116): [E116]
+Melo's data imply fibroblasts should pattern with neural, not blood.
+If fibroblasts pattern with blood instead, the 2015 fibroblast
+overexpression result needs another explanation.
+
+Confidence: [medium, fibroblasts and blood may be closer than with neural according to the GTEx tissue analysis]
+
+Caveat I already expect: motor neurons are absent from Roadmap.
+A null or quiescent result may reflect missing cell types rather
+than absence of function.

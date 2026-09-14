@@ -499,3 +499,73 @@ base-resolution data?
 3. Check the DELETION JUNCTION — a deletion can create a motif as
    well as remove one.
 4. Reporter design: WT / 216-bp deletion / CTCF core mutated (4-5 bp).
+
+## 2026-09-14 — Part 2 & 3: cohesin negative, junction negative
+
+### Cohesin co-occupancy at the CTCF motif: NEGATIVE
+
+CTCF motif = chr11:66,257,035-66,257,065 (hg38), centre 66,257,050.
+
+**SMC3** (ReMap, hg38, window chr11:66,256,455-66,257,671): 2 peaks.
+  - neural: chr11:66,257,081-66,257,544. Starts **16 bp past the 3' end
+    of the CTCF motif**; midpoint 66,257,313, i.e. **262 bp from the
+    motif centre**, over the KLC2 promoter.
+  - peripheral-blood-neutrophil: starts 66,257,395. No overlap.
+
+**RAD21**: 8 peaks (neural, lymphoblast x2, HEK293 x2, HeLa-S3, HAP1,
+SLK). Leftmost (neural) starts 66,257,158, at the element boundary.
+None centred inside the element.
+
+**Conclusion:** no cohesin peak overlaps the CTCF motif. Cohesin is
+positioned over the promoter. CTCF sites doing architectural work are cohesin co-occupied, so this argues the element's CTCF
+site is **not** a loop anchor.
+
+### Consequence: insulation-loss model demoted (third revision)
+
+Track record of this hypothesis:
+  1. Part 3 — demoted: ReMap CTCF peaks looked promoter-centred
+  2. FIMO — revived: CTCF was the top-ranked motif (p=1.6e-5)
+  3. Cohesin — demoted again: no RAD21/SMC3 at the motif
+
+**Aim 2 (mutate the CTCF core) remains justified**, but the
+justification changes. NOT "the deletion removes a boundary."
+Instead: CTCF is the highest-ranked motif in the element, making it the best single candidate
+for the repressive feature.
+
+### CTCF occupancy breadth
+
+Full CTCF track, ~78 peaks in the window. **Only 8 reach the element**:
+heart, DOHH2, DND41, OCI-Ly3, cortical-interneuron x2, hESC, OCI-Ly1.
+The other ~70 start right of the element and cluster on the promoter
+and CpG island.
+
+GM12878 and HepG2: **absent from the window entirely**. K562: two
+peaks, both right of the element.
+-> **Site is NOT constitutive.**
+
+BUT: of the 8 element-overlapping peaks, only 2 are neural. Three are
+B-cell lymphoma lines (DOHH2, OCI-Ly3, OCI-Ly1). And neural cell types
+are well represented in the promoter-only group (SH-SY5Y, neural,
+nerve, retina, anterior-temporal-cortex).
+-> **Correct claim: cell-type-restricted, NOT neural-specific.**
+-> Peak width is not evidence of specificity.
+
+### Deletion junction motif scan: NEGATIVE
+
+Built 200-bp junction (100 bp each flank, element removed) ->
+raw/klc2_junction_200bp.fa. Assertion confirmed no element sequence
+leaked in. FIMO vs JASPAR2024 CORE vertebrates, p<1e-4.
+
+**No motif spans the junction point.** The deletion does not create a
+new transcription factor binding site at the breakpoint.
+
+Rules out the gain-of-motif mechanism. The
+deletion appears to act by REMOVING a feature, not creating one.
+
+### Still to do
+- Re-scan the 216 bp for repressors specifically (REST/RE1, KRAB-ZFPs)
+- q-value for the CTCF hit
+- DNase/DHS footprints over the element
+- GTEx tibial nerve + spinal cord; search for iPSC-MN ATAC/ChIP
+- Revise Fig 5 (drop neural colour coding and width-based sort)
+

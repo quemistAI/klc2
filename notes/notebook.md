@@ -443,3 +443,59 @@ its motif. The REST negative is informative rather than absent:
 REST IS bound in this window in neural tissue, just not at the
 predicted site.
 
+## 2026-09-14 — FRAMING CORRECTION after review by U. Melo (first author, Melo et al. 2015)
+
+**Source:** email correspondence, 2026-09-14.
+
+### The error
+
+I had framed the gap as: "Supplementary Fig S1B calls the element a
+probable enhancer, but deleting it RAISES KLC2 expression, so the
+enhancer call contradicts the direction of effect."
+
+**This is an error.** ChromHMM states and ENCODE cCRE classes
+describe CHROMATIN STATE, not direction of transcriptional effect.
+A repressive sequence sitting inside an active promoter reads as
+active chromatin because the promoter is active. No contradiction.
+
+**The direction was never in question.** Melo et al. already showed
+the element is repressive: reporter constructs LACKING the 216 bp
+gave higher activity in HEK293T, U87MG and motor neurons, and
+patient fibroblasts and iPSC-MNs overexpress KLC2.
+
+### Corrected framing
+
+The 216-bp element is an ESTABLISHED repressive sequence within the
+KLC2 promoter. What is unknown is WHICH SEQUENCE FEATURE within the
+216 bp mediates that repression. No dataset can
+resolve a 216-bp element ~100 bp upstream of the TSS of a broadly
+expressed gene.
+
+### New research question
+
+Which sequence feature within the 216-bp SPOAN element mediates its
+repressive effect on KLC2, and can that feature be identified from
+base-resolution data?
+
+### Consequences
+
+- Fig 3 result is EXPECTED, not a failed prediction. An element in an
+  active promoter of a broadly expressed gene should read active in
+  every tissue. Make into a resolution result.
+- Motif scanning should target REPRESSORS (REST/RE1, KRAB-ZFPs), not
+  enhancer-associated factors. My original priority list was right, but for the wrong reason.
+- TSS distance: ~100 bp upstream of the nearest annotated TSS,
+  ~600 bp upstream of the MANE TSS.
+
+### Reviewer's other points (see revision plan)
+
+1. CTCF p=1.6e-5 for a 19-bp motif is modest. Peak width reflects
+   experiment, not specificity. Must check whether the site is
+   constitutive (GM12878, K562, HepG2) and whether cohesin
+   (RAD21, SMC3) also occupies.
+2. Cortical interneurons are NOT the target cell. SPOAN is motor
+   neuron / peripheral nerve / optic. Use tibial nerve, spinal cord,
+   GTEx data- Fibroblasts are also a valid primary model.
+3. Check the DELETION JUNCTION — a deletion can create a motif as
+   well as remove one.
+4. Reporter design: WT / 216-bp deletion / CTCF core mutated (4-5 bp).

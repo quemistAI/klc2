@@ -569,3 +569,31 @@ deletion appears to act by REMOVING a feature, not creating one.
 - GTEx tibial nerve + spinal cord; search for iPSC-MN ATAC/ChIP
 - Revise Fig 5 (drop neural colour coding and width-based sort)
 
+### Hi-C (3D Genome Browser, hg38, 5 kb, GM12878 + IMR-90): NEGATIVE
+
+Window chr11:66,150,000-66,400,000. Three loops called:
+| anchor 1 | anchor 2 | score | cell |
+| 66,060,001-66,070,000 | 66,230,001-66,240,000 | 229 | GM12878 |
+| 66,060,001-66,070,000 | 66,280,001-66,290,000 | 192 | GM12878 |
+| 66,080,001-66,090,000 | 66,180,001-66,190,000 |  26 | IMR-90  |
+
+**Element (66,256,955-66,257,171) is in none of them.** Sits in the
+~40 kb gap between the 66,230-240 kb and 66,280-290 kb anchors:
+17 kb past one, 23 kb before the next.
+
+Boundary position differs between cell types; tens of kb from
+the element in both.
+
+IMR-90 = lung fibroblast, the most disease-relevant cell type
+available (patient fibroblasts overexpress KLC2). Only one weak
+loop (score 26), neither anchor near the element.
+
+**LIMITATION: 5 kb resolution, 10 kb loop anchors, vs a 217-bp
+element.** Hi-C cannot address this element directly. It can say the
+LOCUS is not a loop anchor. Consistent with the cohesin negative.
+
+-> Insulation-loss model now has three independent negatives:
+   no cohesin at the motif, no loop anchor at the locus, and CTCF
+   bound in only 8/78 cell types at the element.
+  
+

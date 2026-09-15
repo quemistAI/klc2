@@ -616,3 +616,38 @@ Rises from ~66,257,120, peaks ~66,257,300 over the promoter.
 
 Caveat: both tracks are organ/tissue averages, not single cell types.
 No footprint-level (base-resolution protection) data located.
+
+### GTEx KLC2 (median TPM) — REINTERPRETS the Melo blood result
+
+Nerve - Tibial            24.43  (n=670)
+Brain - Spinal cord c-1   19.53  (n=204)
+Cells - Cultured fibro    19.03  (n=652)
+**Whole Blood              2.77  (n=803)**
+Cerebellum / cereb hemi   ~190   (highest in the body)
+
+**Blood is 7-9x lower than every disease-relevant tissue.**
+-> Melo's "no change in blood" is likely an EXPRESSION-LEVEL effect,
+   not a chromatin or element-activity difference: KLC2 is barely
+   expressed in blood, so there is little baseline for a repressive
+   element to act.
+-> Explains why Fig 3 found no chromatin difference along the disease
+   axis. The neural-vs-blood contrast was never a chromatin question.
+
+Note: cerebellum ~190 TPM, ~10x the affected tissues. KLC2 is highest
+where SPOAN spares.
+
+### H3K27ac over element vs 200-bp flanks (Roadmap fold-change, hg19)
+E073 neural     element 5.54 | flank 4.65 | ratio 1.19  (no dip)
+E055 fibroblast element 5.52 | flank 7.99 | ratio 0.69  (dip)
+E029 monocyte   element 1.81 | flank 3.01 | ratio 0.60  (dip)
+
+Dip in fibroblast and monocyte, absent in prefrontal cortex.
+CAVEAT: flanks are asymmetric (E055 left 1.49 vs right 14.48) because
+the promoter abuts the right side. Ratio partly reflects promoter
+proximity, not a symmetric trough. Weak observation.
+
+### Motor neuron accessibility
+ENCODE: 10 human motor neuron ATAC-seq experiments (Snyder lab, all
+released, ALS donor-derived). 0 DNase-seq. Coverage of the element
+not yet checked.
+

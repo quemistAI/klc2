@@ -651,3 +651,46 @@ ENCODE: 10 human motor neuron ATAC-seq experiments (Snyder lab, all
 released, ALS donor-derived). 0 DNase-seq. Coverage of the element
 not yet checked.
 
+## 2026-09-14 — Motor neuron ATAC-seq at the element
+
+**Source:** ENCODE, human motor neuron ATAC-seq, Snyder lab (Stanford),
+all released. 10 experiments available; 0 DNase-seq in motor neuron.
+**All donors have amyotrophic lateral sclerosis.** No healthy-control
+motor neuron ATAC identified.
+
+Files viewed: ENCFF345PTN (rep 1,2), ENCFF638TCZ (rep 1,2),
+ENCFF576QGF (rep 1), ENCFF721NVE (rep 1), ENCFF794PRL (rep 2),
+ENCFF427WCB (rep 2).
+
+### Result: LOW BUT NON-ZERO accessibility across the element
+
+Viewed at chr11:66,256,955-66,257,171 (element exactly). All six
+tracks show signal rising from the left edge and plateauing by
+roughly the midpoint. Not baseline. Y-axis maxima are low (one
+track reads 8).
+
+**Correction to first impression:** at the wider 1.2 kb view the
+element appeared flat, but that was axis compression by the promoter
+peak, not absence of signal. Re-checked at element-exact coordinates.
+
+Representative DHS site and cCRE annotation both begin at roughly the
+element's right third and extend rightward — so the right end of the
+element does fall inside an annotated accessible region; the left
+two-thirds do not.
+
+### Interpretation
+The element is weakly accessible in motor neurons, far below the
+adjacent KLC2 promoter. It is not in closed chromatin, but it is not
+a discrete accessible peak either. Consistent with a sequence sitting
+at the edge of a strongly accessible promoter rather than functioning
+as an independent regulatory element in this cell type.
+
+Does NOT support a strong claim either way about CTCF occupancy here.
+
+### Caveats
+- ALS donor-derived only; disease state may alter accessibility
+- Signal quantification is visual, not measured. To make any numeric
+  claim, download a bigWig and compute mean signal over the element
+  vs flanks, as done for H3K27ac.
+- Reviewer point 4 (wrong tissue) is now addressed with the correct
+  tissue.

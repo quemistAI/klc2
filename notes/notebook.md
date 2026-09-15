@@ -595,5 +595,24 @@ LOCUS is not a loop anchor. Consistent with the cohesin negative.
 -> Insulation-loss model now has three independent negatives:
    no cohesin at the motif, no loop anchor at the locus, and CTCF
    bound in only 8/78 cell types at the element.
-  
+ 
+### DNase + H3K27ac (UCSC layered, averaged by organ/tissue, hg38)
 
+**DNase:** near baseline across the left two-thirds of the element.
+Rises from ~66,257,120, peaks ~66,257,300 over the promoter.
+-> Element is NOT in accessible chromatin; the adjacent promoter is.
+-> Further argues against broad CTCF occupancy at 66,257,035-66,257,065
+   (CTCF binding generally requires accessibility). Consistent with
+   8/78 cell types.
+
+**H3K27ac:** rises approaching the element, DIPS within it
+(~66,257,050-66,257,200), rises again to peak past the right edge.
+-> **First base-resolution feature localized to the element rather
+   than the promoter.** A local trough in active marking inside an
+   otherwise active promoter — the expected signature of a repressive
+   sequence embedded in a promoter.
+-> Weak: averaged data, modest amplitude, not quantified. Treat as an
+   observation, not a result.
+
+Caveat: both tracks are organ/tissue averages, not single cell types.
+No footprint-level (base-resolution protection) data located.

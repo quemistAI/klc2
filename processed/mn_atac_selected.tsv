@@ -1,0 +1,11 @@
+experiment	file	output_type	assembly	status	bio_reps	biosamples	donors	lab	description	n_reps
+ENCSR065CER	ENCFF450FBH	fold change over control	GRCh38	released	1,2	ENCBS855DRG,ENCBS980NQQ	ENCDO272LDF	Michael Snyder, Stanford		2
+ENCSR131HOY	ENCFF632QIA	fold change over control	GRCh38	released	1,2	ENCBS460SWY,ENCBS927HHK	ENCDO689YDN	Michael Snyder, Stanford		2
+ENCSR410DWV	ENCFF345PTN	fold change over control	GRCh38	released	1,2	ENCBS435KUD,ENCBS942UWC	ENCDO022IAQ	Michael Snyder, Stanford		2
+ENCSR459PVP	ENCFF839JKY	fold change over control	GRCh38	released	1,2	ENCBS584TFX,ENCBS716FYZ	ENCDO371BAE	Michael Snyder, Stanford		2
+ENCSR516YAD	ENCFF330ZVA	fold change over control	GRCh38	released	1,2	ENCBS038RNY,ENCBS238JUI	ENCDO565NIZ	Michael Snyder, Stanford		2
+ENCSR634WYX	ENCFF043JFJ	fold change over control	GRCh38	released	1,2	ENCBS309GBV,ENCBS545YIS	ENCDO908CUN	Michael Snyder, Stanford		2
+ENCSR704VZY	ENCFF746MNC	fold change over control	GRCh38	released	1,2	ENCBS182GDQ,ENCBS409BIE	ENCDO022IAQ	Michael Snyder, Stanford		2
+ENCSR709QRD	ENCFF729BQI	fold change over control	GRCh38	released	1,2	ENCBS152AIM,ENCBS733MQS	ENCDO689YDN	Michael Snyder, Stanford		2
+ENCSR812ZKP	ENCFF657SKW	fold change over control	GRCh38	released	1,2	ENCBS827VAK,ENCBS919RDK	ENCDO272LDF	Michael Snyder, Stanford		2
+ENCSR913OWV	ENCFF347SHR	fold change over control	GRCh38	released	1,2	ENCBS259EPB,ENCBS346LNG	ENCDO371BAE	Michael Snyder, Stanford		2

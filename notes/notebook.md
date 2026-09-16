@@ -694,3 +694,150 @@ Does NOT support a strong claim either way about CTCF occupancy here.
   vs flanks, as done for H3K27ac.
 - Reviewer point 4 (wrong tissue) is now addressed with the correct
   tissue.
+
+## 2026-09-16 — Motor neuron ATAC: full quantification, n=10 experiments / 6 donors
+
+### Supersedes the n=2 result in the 2026-09-15 entry
+
+The previous quantification used three files. ENCODE metadata (scripts/
+mn_atac_metadata.py) showed all three came from ONE experiment (ENCSR410DWV),
+one biosample (ENCBS435KUD), one donor (ENCDO022IAQ). Worse, ENCFF345PTN is
+the pooled file (bio_reps 1,2) and ENCFF576QGF is replicate 1 alone — the
+second file is NESTED INSIDE the first, not independent. That is why they
+agreed to within 5-7% in every window. The earlier "n=2" was n=1 donor with
+one file counted twice, i.e. the same error already flagged for the cortical
+interneuron CTCF peaks (GSE117508). Any sentence resting on n=2 is withdrawn.
+
+ENCFF638TCZ was output_type "signal p-value" while the other two were "fold
+change over control". The post hoc exclusion is therefore resolved at file
+selection under prespecified criterion 2, and no longer requires defending
+as a judgment call.
+
+### Additional prespecified rules (set 2026-09-15/16, before full quantification)
+
+6. Where an experiment provides both a pooled file and its constituent
+   replicate files, use the pooled file only. Replicate-level files are nested
+   within the pooled file and are not independent observations.
+7. The unit of replication is the DONOR, not the file or the experiment.
+   Average within donor before aggregating across donors.
+
+### Data
+
+ENCODE search for ATAC-seq in motor neuron / spinal cord motor neuron returned
+10 experiments across 6 donors; 30 passing bigWigs, reduced to 10 by rule 6.
+
+Quantified by REMOTE RANGE READS over HTTPS (pyBigWig with libcurl). No bigWig
+was downloaded; each file is ~1 GB and a full download took ~1 h and failed on
+timeout. Four windows totalling ~2.2 kb are fetched per file in seconds.
+Verified equivalent to local reads: ENCFF345PTN background 0.553 vs 0.55 and
+element 1.244 vs 1.24 against the original local quantification.
+
+### Result (n = 10 experiments, 6 donors; 0 excluded by background floor)
+
+Per-donor medians (range across donors):
+
+  element / left flank   3.20  (3.04 - 3.97)
+  element / promoter     0.29  (0.22 - 0.34)
+  element / background   2.02  (1.29 - 3.17)
+
+Absolute element signal is the most stable quantity in the table: 1.01-1.38
+across all ten files (+/-13%), while background varies 4.3-fold (0.26-1.12)
+and promoter 1.5-fold (3.13-4.85). Six independent iPSC lines agree on the
+element's absolute accessibility.
+
+### element/background is unstable and is demoted in reporting order
+
+The spread in element/background is driven almost entirely by the denominator.
+ENCSR709QRD: background 1.121, element 1.112, el_bkg 0.992 — on that file
+alone the element shows NO accessibility above background, while its
+element/left-flank is 3.468, in line with every other donor. The background
+window (chr11:66,250,000-66,251,000) does not behave as a stable baseline
+across files.
+
+Reporting order is therefore element/left-flank first, then element/promoter,
+then element/background with the instability noted. All three are reported as
+prespecified; only the emphasis is set on the evidence. ENCSR709QRD is retained
+and worth citing as a demonstration of why a single dataset is not a result —
+the same argument already made against the 2015 nine-cell-line analysis and
+against GSE117508.
+
+### Outstanding: window definitions
+
+Background and element windows match the original mn_atac_quant.py exactly.
+Left flank and promoter do NOT (left 0.418 vs 0.59; promoter 3.133 vs 2.83 on
+ENCFF345PTN) — the rewritten script guessed 500 bp flanking each side. Read the
+real coordinates off mn_atac_quant.py, pick ONE definition, rerun, and record
+the coordinates here. The el_prom difference (0.29 vs 0.45) is entirely this.
+No claim may be written until this is settled.
+
+### New observation, not yet a result
+
+Left flank (~0.35) reads BELOW distant background (~0.55) in most files. The
+profile is therefore not a simple ramp: local trough immediately upstream,
+element at ~1.15, promoter at ~4.0. Suggestive of a discrete feature but not
+decisive.
+
+### Decisive test — still pending
+
+scripts/mn_atac_profile.py: 10-bp-binned profile, chr11:66,255,500-66,258,500,
+all ten files overlaid, plus a per-file max-normalised panel so donors of
+different depth are comparable. Question unchanged: is there a local minimum
+between the element and the promoter summit, reproducible across donors?
+
+Prespecified interpretation is unchanged from 2026-09-15, except that the
+prior expectation is revised. On 09-15 I recorded an expectation of monotonic
+decay (outcome 2). With six donors agreeing on the element's absolute signal
+to +/-13% and a left-flank trough now visible, that expectation is withdrawn
+and no outcome is favoured going in.
+
+Peak-call intersection (IDR narrowPeak) still to run as the independent check.
+
+### Standing caveats (unchanged)
+
+- All experiments derive from ALS-patient iPSC lines. KLC2 is not an ALS gene,
+  but these are not healthy control motor neurons, and KIF5A — same kinesin-1
+  complex — is an ALS gene.
+- No DNase-seq exists for this biosample.
+- Windows are asymmetric: the promoter abuts the element, so no right flank
+  comparable to the left flank can be defined.
+
+### New workstream logged: AlphaGenome (DeepMind), not yet started
+
+Sequence-to-function model, 1 Mb input, single-base-pair resolution across
+expression, accessibility, histone marks, TF binding and contact maps. Free
+API for non-commercial use. Avsec et al., Nature, Jan 2026,
+doi:10.1038/s41586-025-10014-0.
+
+Directly relevant because the project's question is whether a feature inside
+the 216 bp can be identified from BASE-RESOLUTION data where bulk chromatin
+states cannot resolve it. AlphaGenome is not a reference dataset, so it does
+not bear on the claim that no reference dataset resolves the element; it is a
+model that generates a testable prediction.
+
+Planned, in order:
+  A. Predict the full 216-bp deletion's effect on KLC2 expression across
+     tissues. Melo measured +48-74% in fibroblasts and iPSC-MNs, no change in
+     whole blood. Does the model reproduce direction and tissue pattern? One
+     API call. Decisive about whether to continue. Record the result either way.
+  B. In-silico deletion scanning across the 216 bp (20-bp tiles, and the three
+     FIMO clusters at 24-52, 81-112, 147-171) to localise the predicted
+     repressive effect. This is Aim 1 in silico and would set construct
+     boundaries on a prediction rather than on motif rank alone.
+  C. Predict the 4-5 bp CTCF core mutation, on expression and predicted CTCF
+     binding tracks.
+
+Limitations to state wherever this appears:
+  - Prediction, not measurement. Hypothesis-generating; does not replace the
+    reporter assay, it tells the reporter assay where to look.
+  - AlphaGenome docs state predictions were evaluated on sequences differing
+    from reference by relatively small amounts (SNPs, indels) and that large
+    differences such as structural variants may be less reliable. A 216-bp
+    deletion is at the upper edge of "indel". Indel stitching is supported and
+    on by default, so it runs, but the size caveat must be stated. The
+    small edits in (B) and (C) are on safer ground than the full deletion in (A).
+  - Confirm which tissue ontology terms are available before starting; tibial
+    nerve and spinal cord (GTEx) expected, motor neuron uncertain.
+
+Scoping: do (A) only until the poster is assembled. (B) and (C) belong to the
+proposal, possibly a Fig 6, and must not delay Fig 5, the framing rewrite, the
+Fig 2/3 captions, the methods diagram, or poster assembly.

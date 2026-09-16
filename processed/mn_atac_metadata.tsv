@@ -1,0 +1,4 @@
+file	output_type	file_format	assembly	status	experiment	biosample	term_name	donor	bio_reps	tech_reps
+ENCFF345PTN	fold change over control	bigWig	GRCh38	released	ENCSR410DWV	ENCBS435KUD	motor neuron	ENCDO022IAQ	1,2	1_1,2_1
+ENCFF576QGF	fold change over control	bigWig	GRCh38	released	ENCSR410DWV	ENCBS435KUD	motor neuron	ENCDO022IAQ	1	1_1
+ENCFF638TCZ	signal p-value	bigWig	GRCh38	released	ENCSR410DWV	ENCBS435KUD	motor neuron	ENCDO022IAQ	1,2	1_1,2_1

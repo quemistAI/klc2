@@ -841,3 +841,605 @@ Limitations to state wherever this appears:
 Scoping: do (A) only until the poster is assembled. (B) and (C) belong to the
 proposal, possibly a Fig 6, and must not delay Fig 5, the framing rewrite, the
 Fig 2/3 captions, the methods diagram, or poster assembly.
+
+## 2026-09-16 — AlphaGenome calibration test (Part A): result and reading
+
+### Prespecified before running (recorded at the time, reproduced here)
+
+Melo et al. measured KLC2 +48-74% in patient fibroblasts and iPSC-MNs, and no
+change in whole blood. The prediction was to be judged on:
+  1. DIRECTION — ALT > REF for KLC2 in fibroblast and nerve/spinal cord.
+     Primary criterion.
+  2. TISSUE PATTERN — effect in whole blood smaller than in fibroblast/nerve.
+  3. MAGNITUDE recorded but not pass/fail; sequence-to-function models are
+     more reliable on direction than effect size.
+If direction wrong -> report failed calibration, do not proceed to Part B.
+If direction right but pattern flat -> proceed with tissue-specificity dropped.
+
+### Method
+
+AlphaGenome API (Avsec et al., Nature 2026, doi:10.1038/s41586-025-10014-0),
+alphagenome SDK in its own conda env (`alphagenome`; envs are now klc2 / meme /
+alphagenome — recorded because "which env" is what breaks a reanalysis later).
+score_variant, RECOMMENDED_VARIANT_SCORERS['RNA_SEQ'], 1-Mb context window
+centred on the variant. Deletion encoded VCF-style: anchor base at
+chr11:66,256,954, reference = anchor + element, alternate = anchor alone.
+Reference bases taken from raw/klc2_del_flank500_hg38.fa, never typed from the
+paper — the locus is inverted between builds and hand-entered bases would be
+reverse-complemented.
+
+Both interpretations of the deletion were run (del217 as published; del216
+dropping the 3' base) because the length discrepancy with Uirá is unresolved.
+
+Output: 57,134 rows x 24 cols, 371 tracks per gene, 77 genes in the window.
+processed/ag_klc2_scores.tsv
+
+Aggregation rule: scores averaged per biosample before interpretation. Single
+tracks are unreliable — cerebellum gave three tracks spanning -0.010 to +0.012
+(q_mean 0.33). The same caution applies to every one-track biosample below,
+INCLUDING motor neuron.
+
+### CRITICAL: do not average across lineages
+
+The first summary ranked genes by mean score across all 371 tracks and returned
+KLC2 at -0.0125, apparently contradicting the per-tissue result. That number is
+meaningless: fibroblast (+0.03) and T cell (-0.33) tracks cancel. Any
+cross-lineage mean at this locus describes no tissue. All interpretation below
+is within-lineage.
+
+### Result — criterion 1 PASSED
+
+Mean KLC2 raw_score by lineage (del217; del216 within ~15%, see below):
+
+  fibroblast (17 biosamples)        +0.024    quantile ~0.9995
+  tibial nerve (2 tracks)           +0.017    quantile  0.9989
+  spinal cord (2 tracks)            +0.019    quantile  0.9993
+  C1 cervical spinal cord           +0.014    quantile  0.9984
+  sciatic nerve                     +0.012    quantile  0.9985
+  motor neuron (1 track)            +0.002    quantile  0.8970
+  cerebellum (3 tracks)             +0.003    q_mean    0.3326  [uninterpretable]
+  lymphoid (20 biosamples)          -0.190    quantile -1.0000
+
+Direction is correct in fibroblast and in every nerve/cord tissue. Raw scores
+look small but the quantile scores are 0.9995+ — top hundredth of a percent of
+genome-wide variant effects. REPORT THE QUANTILE, NOT THE RAW SCORE.
+
+### Criterion 2 NOT MET — and the failure is the interesting part
+
+Melo measured NO CHANGE in whole blood. The model predicts a strong DECREASE
+in lymphoid cells (-0.14 venous blood, -0.19 PBMC, -0.23 NK, -0.28 to -0.33
+across all T-cell subsets, quantile -1.0000) — 5-10x larger in magnitude than
+the fibroblast increase.
+
+This is not "no change" and must not be written up as confirmation. Criterion 2
+as prespecified is NOT MET. Recorded as an unpredicted lineage asymmetry.
+
+It is also a different SHAPE of effect, not merely a sign flip:
+
+  lineage      lncRNA   KLC2    ratio   genes with |mean| > 0.01
+  fibroblast   +0.135  +0.024    5.6x   2
+  nerve/cord   +0.140  +0.014    9.8x   2
+  lymphoid     -0.204  -0.190    1.1x   6  (+ ENSG00000254461, KLC2-AS1,
+                                            KLC2-AS2, CNIH2)
+
+Fibroblast and nerve: tight, local, two-gene effect. Lymphoid: the whole
+neighbourhood moves together. Worth stating explicitly rather than describing
+blood as "the same effect reversed."
+
+### Motor neuron is the weakest positive in the entire set
+
++0.002, quantile 0.897, ONE track. The cell type the disease is about shows an
+order of magnitude less predicted effect than fibroblast. Stated plainly in any
+write-up. Single track, so also subject to the aggregation caveat above.
+
+### Specificity test PASSED
+
+Within-lineage gene ranking, 77 genes in the 1-Mb window:
+
+  KLC2 ranks 2 of 77 in fibroblast, nerve/cord AND lymphoid.
+  ENSG00000255320 ranks 1 of 77 in all three.
+  Everything below the top two drops under 0.010 in fibroblast and nerve.
+
+The deletion moves KLC2 and its immediate neighbours and essentially nothing
+else. The prediction is about this gene, not about the locus generally.
+
+### The lncRNA result — open, with a control pending
+
+ENSG00000255320 (the unnamed 13-kb antisense lncRNA whose intron contains the
+element) is the TOP-ranked gene: +0.135 fibroblast, +0.140 nerve, 5-10x KLC2.
+
+Note the direction: in fibroblast and nerve the lncRNA and KLC2 move the SAME
+way, both up. This is NOT sense/antisense rebalancing (that would show opposite
+signs). Both outputs of a shared bidirectional promoter rising when the element
+is removed is what removing a repressor acting on that promoter would look like
+— consistent with Melo's reporter data and with the current framing, not a
+complication of it.
+
+CONFOUND, unresolved: the element lies INSIDE an intron of ENSG00000255320. The
+RNA-seq scorer aggregates predicted coverage over the gene body, so deleting
+217 bp of the gene's own sequence may move its score for reasons unrelated to
+regulation. Until the control below is run, the +0.135 and the rank-1 position
+are NOT quotable.
+
+Control design, criteria fixed BEFORE choosing intervals: three 217-bp windows,
+fully intronic in ENSG00000255320, >=1 kb from the element, no ENCODE cCRE
+overlap, outside the CpG island (66,257,440-66,258,782) and its shore, GC within
+~5 points of the element's 54.4%. scripts/fetch_hg38.py + scripts/ag_controls.py.
+  controls ~0            -> effect specific to the element; second finding
+  controls ~+0.135       -> artifact of deleting within the gene body; drop the
+                            lncRNA claim to a footnote, KLC2 result stands alone
+  intermediate           -> report the ratio, claim nothing further
+
+THIS DOES NOT REVIVE THE ANTISENSE-LNCRNA MODEL. That model was demoted on GTEx
+measurement. A prediction disagreeing with a measurement is something to report,
+not something to resolve by preferring the newer result. Write-up status changes
+from "killed" to "demoted on GTEx evidence, with a contrary in-silico prediction
+noted." Also worth re-reading what the GTEx evidence actually showed — "the
+lncRNA is not expressed where the disease is" and "the deletion changes the
+lncRNA" are different claims and can both be true.
+
+### 216 vs 217 bp — no longer a concern for this analysis
+
+del216 and del217 agree closely across every tissue (fibroblast +0.033 vs
++0.036 in BJ; lymphoid -0.33 vs -0.32 in Treg; same rank order throughout). The
+unresolved base does not change any conclusion here. It still matters for
+construct boundaries and for what Uirá submits to ClinVar.
+
+### Coordinate registration — correction to the 2026-09-15 entry
+
+The motif-position check recorded earlier (CTCF motif at index 580, element at
+index 500, therefore registration confirmed) is CIRCULAR. The FASTA and the
+motif coordinate derive from the same source, so an absolute one-base shift
+moves both together and the check still passes. It confirms internal
+consistency only, not absolute registration.
+
+Unresolved separately: the hg38 element reads A...C. Given hg19 G at both
+interval ends and the build inversion, both hg38 ends should read C. The 3' end
+matches; the 5' end does not. Three possibilities: (a) FASTA shifted one base
+(0-based start used as 1-based), (b) the symmetric-G property does not survive
+the inversion as recorded in the handoff, (c) the hg19 end bases are not both G
+and the 216/217 ambiguity rests on something else.
+
+Resolution: scripts/fetch_hg38.py re-fetches the element from UCSC with the same
+flanks and diffs against raw/klc2_del_flank500_hg38.fa. Identical => registration
+settled. Different => the off-by-one is located. Not a blocker — a +/-1 bp shift
+cannot change a prediction made on a 1-Mb window — but it must be settled before
+construct design and before Uirá's ClinVar correction.
+
+### Standing limitations for anywhere this appears
+
+- Prediction, not measurement. Hypothesis-generating. Does not replace the
+  reporter assay; it tells the reporter assay where to look.
+- AlphaGenome docs: predictions evaluated on sequences differing from reference
+  by relatively small amounts (SNPs, indels); large differences such as
+  structural variants may be less reliable. A 216-bp deletion sits at the upper
+  edge of "indel." Indel stitching is supported and on by default.
+- Criterion 2 not met (above). Report the discrepancy, do not smooth it.
+- Motor neuron near-null, single track.
+- Cross-lineage averaging is invalid at this locus.
+
+### Sentence this currently supports (pending the control)
+
+> In-silico prediction (AlphaGenome; Avsec et al. 2026) recapitulates the
+> direction of the measured effect: the 216-bp deletion is predicted to increase
+> KLC2 in fibroblasts (mean +0.024, 17 biosamples) and in tibial nerve and spinal
+> cord, with KLC2 ranked second of 77 genes in the 1-Mb window. The model
+> additionally predicts a decrease in lymphoid lineages that was not observed in
+> the 2015 whole-blood measurement, and predicts near-null effect in motor
+> neurons; both are reported as discrepancies.
+
+### Scoping decision
+
+IN SCOPE NOW (~1 h): element refetch/registration check; three control
+deletions; this entry.
+
+DEFERRED until the poster is assembled: in-silico tiling across the 216 bp
+(Part B), CTCF core mutation prediction (Part C), any modality beyond RNA_SEQ
+(ATAC, CHIP_TF), anything further on the lncRNA beyond the one control.
+
+REASON: still open from the revision plan — Fig 5 rebuild, framing rewrite
+through poster/proposal/abstract, Fig 2 and Fig 3 captions, methods flow
+diagram, poster assembly, send revised figures to Uirá. The motor neuron ATAC
+profile plot (scripts/mn_atac_profile.py) is also still unrun, and unlike
+AlphaGenome it decides an actual claim about a measurement. Three sessions have
+now gone to a workstream that did not exist yesterday and none of those seven
+items has moved.
+
+PLACEMENT: one or two sentences in the proposal's preliminary data plus a
+limitations line. NOT a poster figure — a prediction beside six
+measurement-based figures invites "why do you trust it," and that answer takes
+longer than a poster conversation allows. Have it ready if asked.
+
+## 2026-09-17 — MAJOR CORRECTION: element coordinates were 131 bp off
+
+### Finding
+
+Published hg19 interval chr11:66,024,557-66,024,773 (217 bp, ends G/G) matches
+hg38 chr11:66,257,086-66,257,302 at 217/217, FORWARD strand.
+
+The interval used throughout this project, chr11:66,256,955-66,257,171, is
+131 bp upstream. Overlap with the true element: 86 bp of 217 (40%).
+
+Verified by direct sequence retrieval from the UCSC REST API (getData/sequence)
+for both builds, independently of liftover and of BLAT.
+scripts/check_hg19_hg38.py
+
+### Two prior conclusions overturned
+
+1. THE LOCUS IS NOT INVERTED BETWEEN BUILDS. A forward match excludes it. Every
+   statement of "hg19 plus strand = hg38 minus strand" in the handoff and in the
+   figure captions is wrong.
+
+2. THE LIFTOVER WAS CORRECT. The handoff records a liftover result rejected for
+   being "131 bp off" in favour of a BLAT verification. That is exactly this
+   offset. The liftover was right; the BLAT result was accepted over it in
+   error. Whatever query sequence produced the BLAT hit at 66,256,955 was not
+   the sequence at the published hg19 coordinates. To be resolved with Uirá:
+   does the 2015 supplementary sequence match the 2015 published coordinates?
+
+This also resolves the A...C anomaly logged 2026-09-16. The true interval reads
+G/G in both builds, consistent with the published G at both ends and with the
+216/217 ambiguity as described. The old interval read A...C because it began
+131 bp early.
+
+### Immediate consequence: the CTCF claim
+
+The CTCF motif at chr11:66,257,035-66,257,065 ends 21 bp BEFORE the true element
+begins. It lies entirely outside the deletion.
+
+This removes the basis for Fig 5, the proposal title, Aim 2, and the CTCF
+ChIP-qPCR design. Nothing rewritten until FIMO is rerun on the correct sequence.
+
+### Affected, to redo at chr11:66,257,086-66,257,302
+
+  FIMO motif scan (CTCF rank, 14/30 zinc fingers, clusters 24-52/81-112/147-171)
+  Fig 5 and the entire CTCF line of argument
+  Motor neuron ATAC quantification (element window; promoter and background
+    windows were defined relative to the old element and need re-checking)
+  AlphaGenome runs (2026-09-16 entry) - wrong deletion scored throughout
+  Deletion junction reconstruction and scan
+  Locus annotation: TSS distances, cCRE gap, CpG island shore (island starts
+    66,257,440 - now 138 bp downstream, not 268), lncRNA intron position,
+    Multiz conservation
+  ChromHMM (Fig 3) and histone signal (Fig 4) - windows shift 131 bp; the
+    resolution conclusion likely survives but must be re-derived, not assumed
+  Figs 1-5: highlight position
+  REST, cohesin, Hi-C, DNase negatives
+
+### Unaffected
+
+  GTEx reinterpretation (blood 2.8 TPM vs 19-24 in disease tissues) - no
+    coordinates involved
+  The resolution argument - a 217-bp element ~100 bp from an active TSS is not
+    resolvable by bulk chromatin data regardless of a 131-bp shift
+  Uirá's framing correction: the element is an established repressive sequence
+  All prespecification and reporting discipline
+
+### Old files retained
+
+raw/klc2_del_flank500_hg38.fa and all processed/ outputs derived from it are
+KEPT, not overwritten. New work goes to *_TRUE_* filenames. The error and its
+detection stay in the record.
+
+### How it was caught
+
+The hg38 element read A...C where the published hg19 ends (G/G) implied C...C
+under the assumed inversion. No single-base shift produced C...C, which meant
+the problem was not an extraction offset. Checking the hg19 sequence directly
+rather than the hg38 registration found the 131-bp offset. A two-base anomaly
+was the only visible symptom.
+
+### Next
+
+1. Rebuild element FASTA at true coordinates
+2. Rerun FIMO - determines whether any motif story exists and Aim 2's fate
+3. Recompute locus annotation
+4. Re-quantify ATAC, rerun AlphaGenome, rebuild junction
+5. Email Uirá today: he is checking chromatograms for a ONE-base discrepancy and
+   needs to know it may be a 131-bp one. Bears on the ClinVar/OMIM corrections
+   he offered to make.
+## 2026-09-17 (cont.) — Motif analysis at corrected coordinates: three negatives
+
+### FIMO on the corrected element
+
+chr11:66,257,086-66,257,302. FIMO (MEME 5.3.0), JASPAR2024 CORE vertebrates
+non-redundant, p < 1e-4. 383 hits in the flank file; 73 inside the 217 bp.
+
+Element GC is 57.6%, NOT the 54.4% recorded in the handoff — that figure was
+computed on the wrong sequence. Corrected everywhere.
+
+### Structure found
+
+Three spatial clusters with gaps at 41-74 and 90-102:
+  I    16-40    ZNF701, ZNF528, ZNF175, ETS core, ZBTB11
+  II   103-141  ETS core, Zbtb2/ZBTB11/ZBTB6, ZNF454, nuclear receptors
+  III  149-215  ETS core, NFKB1/2, ZNF768/740/454/460/331/213, INSM1
+
+These SUPERSEDE the old 24-52 / 81-112 / 147-171 clusters, which were on the
+wrong sequence.
+
+Two copies of an identical 9-bp ETS core (ACCGGATGT) at element 109-117 and
+168-176, both plus strand, 59 bp apart, in unrelated flanks.
+
+CORRECTION LOGGED: I first read this as a 59-bp tandem repeat carrying a
+duplicated ETS module. Checked directly — the two 18-mers share only their
+first 10 bases (ACCGGATGTG then diverge completely). It is homotypic site
+clustering, not a duplication. The reporter design implication differs: mutate
+the two cores, not delete two copies of a module.
+
+CTCF still present (p = 2.1e-5) but ~24th rank, inside cluster III. Not
+pursued — outside the old element's basis, and Uirá advised dropping it.
+
+### Enrichment test — the analysis Uirá asked for
+
+DESIGN. Element + 30 GC-matched 217-bp background windows in ONE FASTA, ONE
+FIMO run, so settings are identical by construction. Background: 57.6% +/- 2.0
+GC, non-overlapping, excluding element +/-500 bp and CpG island +/-500 bp.
+Sampling regions widened to chr11:66,240,000-66,256,500 and 66,259,500-66,270,000
+because at +/-3.0 GC only 14 qualifying windows existed in the original 11 kb —
+the element is GC-rich for its neighbourhood, worth recording in itself.
+Background windows therefore extend beyond the lncRNA; slight weakening of the
+"same intron" control, noted.
+
+Family classification in a SHARED module (scripts/tf_families.py) applied
+identically to element and background. Repressor-associated families
+(ZNF_C2H2, ZBTB, INSM) PRESPECIFIED before the comparison ran. NFKB excluded
+as context-dependent (p50/p52 homodimers repress, heterodimers activate). ETS
+excluded as predominantly activating.
+
+Hits collapsed by family+position — JASPAR lists many near-identical matrices
+per family and they are not independent observations.
+
+RESULT — THREE NEGATIVES:
+
+  repressor-family hits   element 24 | bg median 19.5 (11-30)
+                          8 of 30 bg windows match or exceed | p = 0.290
+  total hits              element 45 | bg median 43.5 (21-67)  indistinguishable
+  distinct motifs         element 51 | bg median 43.5 (22-82)  p = 0.742
+  distinct families       element 8  | bg median 5.0  (4-8)    p = 1.000
+
+>> By motif content, the corrected 217-bp element is indistinguishable from
+>> GC-matched sequence in the same region.
+
+This RETIRES the old "14 of 30 FIMO hits are zinc fingers" observation, which
+was never tested against a baseline and was in any case computed on the wrong
+sequence.
+
+### An intermediate claim raised and killed the same hour
+
+The element showed 0 hits in the "other" family bucket while every background
+window had 7-29. I read this as an unusually narrow motif repertoire and said
+so. Tested it directly (scripts/family_diversity.py, distinct motifs and
+distinct families per window, the former classifier-independent): the element
+has MORE families than any background window (8, top of the 4-8 range) and an
+ordinary number of distinct motifs. The zero was a classifier artifact — the
+eight named families happened to cover everything in that particular sequence.
+Claim withdrawn.
+
+Note for figures: the family+position-collapsed table and the raw-hit table
+give different counts for the same sequence (element 45 vs 73). Both correct
+for their purpose. Do not mix them in one figure.
+
+### Why this strengthens the case
+
+Five independent computational approaches now converge on the same conclusion:
+ChromHMM, continuous histone signal, DNase, ATAC, and motif content. The
+element is not resolvable from its context by reference data or by sequence
+scanning. That convergence is a better argument for the reporter assay than any
+single negative.
+
+### STOPPING POINT
+
+The motif line of inquiry is CLOSED. Three negatives from three angles is
+sufficient. A fourth variation would be fishing.
+
+### AlphaGenome cluster decomposition and ETS mutations
+
+Run at corrected coordinates. Fibroblast mean KLC2 score:
+
+  full element   217 bp  +0.0339
+  cluster I       25 bp  -0.0012
+  cluster II      39 bp  +0.0210
+  cluster III     67 bp  +0.0178
+  ETS core 1       9 bp  +0.0152
+  ETS core 2       9 bp  +0.0165
+
+full_217 reproduces the calibration result at corrected coordinates, so that
+finding survives the coordinate fix. Cluster I contributes nothing. Clusters II
+and III each carry roughly half, and each contains one ETS core. Each 9-bp core
+alone reproduces ~45% of the full deletion's predicted effect.
+
+POINT MUTATIONS (ACCGGATGT -> ACCTTATGT; preserves length and spacing, so
+isolates the binding site from the geometry):
+
+  core 1 deletion  +0.0152    core 1 mutation  +0.0177
+  core 2 deletion  +0.0165    core 2 mutation  +0.0054
+
+Core 1 behaves like a binding site — the mutation reproduces and slightly
+exceeds the deletion. Core 2 does NOT — the mutation recovers only a third of
+its deletion's effect, so most of what deleting core 2 does comes from removing
+sequence, not from destroying the ETS site. Two identical 9-mers behaving
+differently argues against a redundant-sites model and implies context matters.
+
+Nerve/cord shows nothing: every edit between -0.008 and +0.004, and full_217 is
+only +0.0021 there. The predicted effect is fibroblast-specific. Workable since
+fibroblasts are now the primary model, but must be stated, not glossed.
+
+### Controls required before any of the ETS result is quotable
+
+1. Scrambled control at both core positions — show an arbitrary 3-bp change
+   does NOT produce the same effect. Without it, "the ETS site matters" is one
+   mutation away from "any change there matters."
+2. FIMO rescan of the mutant sequences — ACCTTATGT may CREATE a site rather
+   than only destroy one. Same trap avoided on the deletion junction.
+3. Double mutant — requires predict_sequence on a custom sequence, not
+   score_variant. Deferred.
+
+### Scoping
+
+AlphaGenome stops here until the poster/presentation work is done. 12 days to
+the 29 Sept meeting and still untouched: UCSC annotation checklist, ATAC
+re-quantification at corrected coordinates, ATAC profile plot (written, never
+run, and it decides an actual claim about a measurement), junction rebuild, six
+figures, the presentation itself.
+
+Next: UCSC checklist (browser work, no code), then ATAC, then figures.
+
+### Uirá's reply received today
+
+Endorsed the GTEx blood reading. Confirmed fibroblasts as a valid primary model
+at 19 TPM with patient lines available. Said to stop chasing CTCF — the
+architectural hypothesis is closed — and instead scan the 216 bp for repressor
+motifs without a prior, then look for footprints in fibroblast ATAC.
+
+The motif scan is done and returned a negative (above). Fibroblast ATAC
+footprinting not started — needs BAM files rather than bigWigs, substantially
+more work than anything attempted so far. Scope separately, after the meeting.
+
+Meeting offered: Tue 29 Sept or Thu 1 Oct, 17:00 or 18:00 Berlin (11:00/12:00
+New York). He asked for a short presentation on background, what has been
+tested, what is open, and the hypotheses — and to cover Lucid, his company
+(lucid-genomics.com). Read up on Lucid before the call.
+
+Reply drafted, including the 131-bp coordinate finding, since it changes what
+he is looking for in the 2015 chromatograms and what the ClinVar/OMIM
+corrections should say. Key question to put to him: does the 2015 supplementary
+sequence match the 2015 published coordinates?
+
+## 2026-09-17 (cont.) — ATAC at corrected coordinates: a reproducible subpeak
+## summit inside the element
+
+### Re-quantification at chr11:66,257,086-66,257,302
+
+Windows redefined relative to the corrected element. NOTE: the OLD promoter
+window overlapped the corrected element, so old and new numbers are NOT
+comparable and no before/after should be presented.
+
+  background  66,250,000-66,251,000   (unchanged, distant)
+  left        66,256,586-66,257,085   (500 bp, immediately upstream)
+  element     66,257,086-66,257,302   (217 bp)
+  promoter    66,257,303-66,257,802   (500 bp, spans the CpG island start)
+
+Per-donor medians (n = 10 experiments, 6 donors, 0 excluded by the floor):
+
+  element/left        3.11  (2.87-3.39)   <- tightest, and the headline number
+  element/promoter    0.29  (0.25-0.34)
+  element/background  3.09  (1.76-5.12)   <- still denominator-driven, demoted
+
+Absolute element signal 1.18-2.33 (+/-33%), up from 1.01-1.38 (+/-13%) on the
+old interval. The corrected window sits closer to the promoter, so the rise is
+expected; the reduced stability is consistent with the window overlapping a
+gradient rather than sitting on a flat feature. Observation, not a conclusion.
+
+### Profile test — local maximum over the element's 3' end
+
+scripts/mn_atac_profile.py, chr11:66,255,600-66,258,600, 10-bp bins, all 10
+files, plus a per-file max-normalised panel.
+
+A local maximum appears over the element's 3' end, followed by a dip at
+~66,257,320-66,257,430, before signal rises into the promoter peak.
+
+QUANTIFIED (scripts/mn_atac_dip.py) rather than eyeballed — and the eye was
+wrong. I first read the plot as "reproducible across all ten traces." It is not:
+
+  peak/dip ratio  median 1.17  range 0.87-1.66   >1.0 in 8 of 10
+
+Four files show a clear dip (>=1.3), four are marginal (1.03-1.20), two show
+none (0.87, 0.93). The two negatives each have a same-donor replicate well above
+1.0, so the split is WITHIN donors, not between them — consistent with
+experiment-level variation (depth, S/N) rather than biological absence. That is
+an interpretation, not a result.
+
+Window sensitivity (+/-20 bp):
+  (66257180,66257300) vs (66257300,66257420)  median 1.19  8/10
+  (66257200,66257320) vs (66257320,66257430)  median 1.17  8/10   [primary]
+  (66257220,66257340) vs (66257340,66257450)  median 1.12  7/10
+Some sensitivity, no cliff. Report the middle window as primary with the range
+as the sensitivity check. NOTE the windows were chosen by eye off the plot —
+a real weakness, and the reason the peak-call test below matters more.
+
+### Peak calls — the decisive test
+
+TWO SELECTION BUGS CAUGHT AND FIXED, both mine:
+
+1. First pass intersected ~50 peak files for 10 experiments. ENCODE publishes
+   conservative IDR, optimal IDR, replicated, pseudoreplicated and IDR-ranked
+   files per experiment; the raw intersect counted them as independent. Same
+   nesting error as the bigWigs.
+2. The download filter (awk on /IDR/) and the selection priority disagreed, so
+   for 4 experiments the top-ranked file was never downloaded. Those 4 dropped
+   out silently, and the remaining 6 each used whatever ranked highest among
+   files that happened to be on disk — mixing peak types across experiments.
+   The intermediate "3 of 6" result was therefore not a clean comparison and is
+   withdrawn.
+
+FIXED: scripts/fetch_selected_peaks.py picks exactly ONE file per experiment on
+a fixed priority (conservative IDR > IDR thresholded > replicated >
+pseudoreplicated), downloads it, verifies the gzip, then
+scripts/atac_summits.py reads that selection. "IDR ranked peaks" EXCLUDED —
+those are unthresholded ranked lists, not called peaks.
+
+RESULT:
+
+  experiments with >=1 summit inside the element:  6 of 10
+  donors with >=1:                                 6 of 6
+  summit positions: 66,257,254 / 261 / 263 / 267 / 267 / 301
+
+Every donor shows it in at least one experiment. Five of six summits fall within
+a 14-bp span. Across a ~1.5 kb accessible region, that clustering is not chance.
+
+IMPORTANT — what this is NOT. Every file calls ONE large accessible region of
+~1.5 kb (starts 66,257,013-66,257,047, ends 66,258,550-66,258,880) covering both
+the element and the promoter. The element does NOT form a separate peak. What is
+reproducible is a SUBPEAK SUMMIT within that domain, inside the element.
+
+The accessible region's 5' boundary sits 40-70 bp upstream of the element start
+— the domain begins essentially where the element begins. Worth a figure note.
+
+### CONVERGENCE — three methods, three data types, same ~50 bp
+
+  continuous ATAC profile   local max, 8/10 experiments     element 3' end
+  called peak summits       6/10 exp, 6/6 donors            66,257,254-267
+  AlphaGenome decomposition ETS core 2 del = +0.017/+0.034  66,257,253-261
+
+ETS core 2 occupies element positions 168-176 = chr11:66,257,253-66,257,261.
+Five of six ATAC summits land on it or within 6 bp of it.
+
+This is the first time any dataset has resolved something INSIDE the 217 bp.
+
+### The claim, as it may be written
+
+> Within a single ~1.5 kb accessible region spanning the element and the KLC2
+> promoter, a called subpeak summit falls inside the 217-bp element in 6 of 10
+> motor neuron ATAC experiments, representing all 6 donors, at
+> chr11:66,257,254-66,257,301 (5 of 6 within 14 bp). Continuous signal shows a
+> corresponding local maximum in 8 of 10 experiments (median peak/dip 1.17,
+> range 0.87-1.66). The summit position coincides with an ETS core at
+> 66,257,253-66,257,261 that in-silico deletion independently nominates as
+> carrying roughly half the predicted expression effect.
+
+Caveats that travel with it: the element does not form a separate accessible
+peak; peak types are not uniform across experiments (record the split from the
+"peak types chosen" line); all donors are ALS-derived iPSC lines; AlphaGenome is
+prediction, not measurement; the profile windows were chosen by eye.
+
+### Consequence for Aim 1
+
+The construct series is no longer "tile the element." It is: wild type, full
+216-bp deletion, ETS core 2 point mutation, ETS core 1 point mutation, both
+cores mutated. Four informative conditions, each testing something named, within
+the ~$3,000 budget.
+
+This also answers Uirá's question better than the motif scan did. He asked for a
+repressor-motif scan without a prior (negative, p = 0.29) and then for
+footprints in fibroblast ATAC. The accessibility data he pointed at is what
+produced the specific site.
+
+### Priority change
+
+The scrambled-sequence control at both ETS cores has moved from nice-to-have to
+LOAD-BEARING. Without it, "the ETS site matters" is one mutation away from "any
+change there matters," and the proposal now rests on that site. Same for the
+FIMO rescan of the mutant sequences (ACCTTATGT may CREATE a site).
+
+Still ahead of them in order: UCSC annotation checklist, figures, presentation.

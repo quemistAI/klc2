@@ -5,11 +5,11 @@ No bigWig downloads. Falls back to bigWigSummary if pyBigWig lacks curl."""
 import pandas as pd, numpy as np, subprocess, sys
 
 CHR = "chr11"
-WINDOWS = {
+WINDOWS = {                          # hg38, corrected 2026-09-17
     "background": (66250000, 66251000),
-    "left":       (66256455, 66256955),
-    "element":    (66256955, 66257171),
-    "promoter":   (66257171, 66257671),
+    "left":       (66256586, 66257085),
+    "element":    (66257086, 66257302),
+    "promoter":   (66257303, 66257802),
 }
 BKG_FLOOR = 0.05   # prespecified 2026-09-15
 
@@ -55,7 +55,7 @@ for _, r in urls.iterrows():
     })
 
 df = pd.DataFrame(rows).round(3)
-df.to_csv("processed/mn_atac_quant_all.tsv", sep="\t", index=False)
+df.to_csv("processed/mn_atac_quant_all_TRUE.tsv", sep="\t", index=False)
 
 pd.set_option("display.width", 220)
 print(df.to_string(index=False))
@@ -71,3 +71,4 @@ print(f"\nn files {len(ok)} | n experiments {ok.experiment.nunique()} | n donors
 for col in ["el_bkg", "el_left", "el_prom"]:
     s = per_donor[col]
     print(f"{col:8s} median {s.median():.2f}  range {s.min():.2f}-{s.max():.2f}")
+

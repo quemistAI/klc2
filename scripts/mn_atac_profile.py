@@ -8,8 +8,8 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-CHR, START, END, NBINS = "chr11", 66255500, 66258500, 300
-EL = (66256955, 66257171)
+CHR, START, END, NBINS = "chr11", 66255600, 66258600, 300
+EL = (66257086, 66257302)
 
 urls = pd.read_csv("processed/mn_atac_urls.tsv", sep="\t")
 x = np.linspace(START, END, NBINS)
@@ -42,3 +42,4 @@ fig.tight_layout()
 fig.savefig("figures/mn_atac_profile.png", dpi=300)
 np.savez_compressed("processed/mn_atac_profile.npz", x=x, **traces)
 print("wrote figures/mn_atac_profile.png")
+

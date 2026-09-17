@@ -1,0 +1,571 @@
+variant	biosample_name	n_tracks	mean	lo	hi	q_mean
+del216_drop3p	A172	1	0.0037	0.0037	0.0037	0.9588
+del216_drop3p	A375	1	-0.0195	-0.0195	-0.0195	-0.9991
+del216_drop3p	A549	1	-0.0062	-0.0062	-0.0062	-0.9885
+del216_drop3p	A673	1	-0.0008	-0.0008	-0.0008	-0.6324
+del216_drop3p	AG04450	1	0.0259	0.0259	0.0259	0.9995
+del216_drop3p	Ammon's horn	1	0.0002	0.0002	0.0002	0.1678
+del216_drop3p	B cell	2	-0.1559	-0.1598	-0.1519	-1.0
+del216_drop3p	BE2C	1	-0.0142	-0.0142	-0.0142	-0.9983
+del216_drop3p	BJ	1	0.0332	0.0332	0.0332	0.9997
+del216_drop3p	BLaER1	1	-0.0145	-0.0145	-0.0145	-0.9985
+del216_drop3p	C1 segment of cervical spinal cord	1	0.0092	0.0092	0.0092	0.9955
+del216_drop3p	CD14-positive monocyte	1	-0.055	-0.055	-0.055	-0.9998
+del216_drop3p	CD4-positive, CD25-positive, alpha-beta regulatory T cell	2	-0.3288	-0.3311	-0.3266	-1.0
+del216_drop3p	CD4-positive, alpha-beta T cell	2	-0.2944	-0.334	-0.2548	-1.0
+del216_drop3p	CD4-positive, alpha-beta memory T cell	2	-0.2879	-0.3281	-0.2478	-1.0
+del216_drop3p	CD8-positive, alpha-beta T cell	2	-0.2914	-0.3381	-0.2448	-1.0
+del216_drop3p	CD8-positive, alpha-beta memory T cell	2	-0.237	-0.3102	-0.1639	-1.0
+del216_drop3p	Caco-2	1	-0.0194	-0.0194	-0.0194	-0.9992
+del216_drop3p	Caki2	1	-0.0104	-0.0104	-0.0104	-0.9976
+del216_drop3p	Calu3	1	-0.0251	-0.0251	-0.0251	-0.9994
+del216_drop3p	Daoy	1	-0.0187	-0.0187	-0.0187	-0.9992
+del216_drop3p	G401	1	0.0099	0.0099	0.0099	0.998
+del216_drop3p	GM12878	2	-0.0758	-0.076	-0.0755	-0.9999
+del216_drop3p	GM12891	1	-0.0668	-0.0668	-0.0668	-0.9998
+del216_drop3p	GM12892	1	-0.068	-0.068	-0.068	-0.9998
+del216_drop3p	GM23248	2	0.0077	0.0049	0.0106	0.9862
+del216_drop3p	GM23338	2	-0.0014	-0.0021	-0.0007	-0.6836
+del216_drop3p	H1	2	0.0059	0.0006	0.0113	0.7768
+del216_drop3p	H4	1	0.0022	0.0022	0.0022	0.8753
+del216_drop3p	H7	1	0.0063	0.0063	0.0063	0.9892
+del216_drop3p	H9	1	-0.0065	-0.0065	-0.0065	-0.9899
+del216_drop3p	HCT116	2	-0.0231	-0.0264	-0.0199	-0.9993
+del216_drop3p	HFFc6	1	0.0135	0.0135	0.0135	0.9988
+del216_drop3p	HT-29	1	-0.0184	-0.0184	-0.0184	-0.9991
+del216_drop3p	HT1080	2	-0.0219	-0.0245	-0.0192	-0.9992
+del216_drop3p	HUES64	1	0.0118	0.0118	0.0118	0.9976
+del216_drop3p	HeLa-S3	1	-0.017	-0.017	-0.017	-0.9989
+del216_drop3p	HepG2	2	-0.0247	-0.0336	-0.0158	-0.9992
+del216_drop3p	IMR-90	2	0.0188	0.0171	0.0204	0.9993
+del216_drop3p	IgD-negative memory B cell	1	-0.2052	-0.2052	-0.2052	-1.0
+del216_drop3p	Jurkat, Clone E6-1	1	-0.0642	-0.0642	-0.0642	-0.9998
+del216_drop3p	K562	2	-0.0095	-0.0115	-0.0074	-0.9928
+del216_drop3p	Karpas-422	1	-0.0654	-0.0654	-0.0654	-0.9998
+del216_drop3p	LHCN-M2	2	0.017	0.0109	0.0231	0.9987
+del216_drop3p	M059J	1	0.0066	0.0066	0.0066	0.9912
+del216_drop3p	MCF 10A	1	-0.0289	-0.0289	-0.0289	-0.9996
+del216_drop3p	MCF-7	2	-0.0104	-0.0156	-0.0053	-0.9908
+del216_drop3p	MG63	1	0.0141	0.0141	0.0141	0.999
+del216_drop3p	NCI-H460	2	-0.0277	-0.0296	-0.0259	-0.9995
+del216_drop3p	OCI-LY7	1	-0.0691	-0.0691	-0.0691	-0.9999
+del216_drop3p	PC-3	1	-0.0037	-0.0037	-0.0037	-0.956
+del216_drop3p	PC-9	1	-0.0057	-0.0057	-0.0057	-0.9854
+del216_drop3p	PFSK-1	1	-0.0208	-0.0208	-0.0208	-0.9992
+del216_drop3p	Panc1	2	-0.0073	-0.0115	-0.0031	-0.954
+del216_drop3p	Peyer's patch	2	-0.0441	-0.05	-0.0382	-0.9997
+del216_drop3p	Purkinje cell	1	-0.0138	-0.0138	-0.0138	-0.9983
+del216_drop3p	RPMI7951	1	0.0116	0.0116	0.0116	0.9983
+del216_drop3p	Right ventricle myocardium inferior	1	0.0237	0.0237	0.0237	0.9995
+del216_drop3p	Right ventricle myocardium superior	1	0.0243	0.0243	0.0243	0.9995
+del216_drop3p	SJCRH30	1	0.0046	0.0046	0.0046	0.9809
+del216_drop3p	SJSA1	1	0.0095	0.0095	0.0095	0.9979
+del216_drop3p	SK-MEL-5	2	-0.0225	-0.0245	-0.0206	-0.9992
+del216_drop3p	SK-N-DZ	1	-0.0034	-0.0034	-0.0034	-0.9325
+del216_drop3p	SK-N-SH	1	0.0118	0.0118	0.0118	0.9982
+del216_drop3p	T-cell	2	-0.2627	-0.2864	-0.2389	-1.0
+del216_drop3p	T-helper 17 cell	1	-0.2985	-0.2985	-0.2985	-1.0
+del216_drop3p	U-87 MG	1	-0.0079	-0.0079	-0.0079	-0.9896
+del216_drop3p	WTC11	1	-0.0024	-0.0024	-0.0024	-0.883
+del216_drop3p	adipose tissue	1	0.0194	0.0194	0.0194	0.9993
+del216_drop3p	adrenal gland	3	0.0076	0.0031	0.016	0.9538
+del216_drop3p	airway epithelial cell	1	0.0034	0.0034	0.0034	0.953
+del216_drop3p	amnion	1	0.021	0.021	0.021	0.9993
+del216_drop3p	amygdala	1	0.004	0.004	0.004	0.9498
+del216_drop3p	anterior cingulate cortex	1	-0.0008	-0.0008	-0.0008	-0.4817
+del216_drop3p	anterior lingual gland	1	-0.0038	-0.0038	-0.0038	-0.9427
+del216_drop3p	aorta	2	0.01	0.0079	0.0121	0.9971
+del216_drop3p	aortic smooth muscle cell	1	0.0128	0.0128	0.0128	0.9989
+del216_drop3p	articular chondrocyte of knee joint	1	0.0282	0.0282	0.0282	0.9997
+del216_drop3p	ascending aorta	2	0.0128	0.0121	0.0135	0.9985
+del216_drop3p	astrocyte	1	0.0158	0.0158	0.0158	0.9993
+del216_drop3p	bladder microvascular endothelial cell	1	0.0128	0.0128	0.0128	0.9988
+del216_drop3p	body of pancreas	2	-0.0131	-0.0148	-0.0113	-0.9981
+del216_drop3p	brain	1	0.0071	0.0071	0.0071	0.9906
+del216_drop3p	breast epithelium	2	0.0061	0.0054	0.0069	0.9887
+del216_drop3p	bronchial epithelial cell	1	-0.0175	-0.0175	-0.0175	-0.9992
+del216_drop3p	bronchial smooth muscle cell	1	0.0176	0.0176	0.0176	0.9993
+del216_drop3p	bronchus fibroblast of lung	1	0.0234	0.0234	0.0234	0.9996
+del216_drop3p	camera-type eye	1	0.0152	0.0152	0.0152	0.9992
+del216_drop3p	cardiac atrium fibroblast	1	0.0142	0.0142	0.0142	0.9991
+del216_drop3p	cardiac muscle cell	2	0.0187	0.0135	0.0239	0.9989
+del216_drop3p	cardiac septum	1	0.0165	0.0165	0.0165	0.9991
+del216_drop3p	cardiac ventricle fibroblast	1	0.0283	0.0283	0.0283	0.9997
+del216_drop3p	caudate nucleus	1	0.0018	0.0018	0.0018	0.7684
+del216_drop3p	cerebellar hemisphere	1	-0.012	-0.012	-0.012	-0.9975
+del216_drop3p	cerebellum	3	0.0042	-0.01	0.0119	0.3334
+del216_drop3p	chondrocyte	1	0.0198	0.0198	0.0198	0.9995
+del216_drop3p	chorion	1	0.0144	0.0144	0.0144	0.9984
+del216_drop3p	chorionic villus	1	0.019	0.019	0.019	0.999
+del216_drop3p	colonic mucosa	1	-0.009	-0.009	-0.009	-0.9949
+del216_drop3p	common myeloid progenitor, CD34-positive	1	-0.0284	-0.0284	-0.0284	-0.9993
+del216_drop3p	coronary artery	1	0.0093	0.0093	0.0093	0.996
+del216_drop3p	cortex of kidney	1	-0.0058	-0.0058	-0.0058	-0.9789
+del216_drop3p	dermis blood vessel endothelial cell	1	0.0117	0.0117	0.0117	0.9984
+del216_drop3p	dermis lymphatic vessel endothelial cell	1	0.0062	0.0062	0.0062	0.9912
+del216_drop3p	dermis microvascular lymphatic vessel endothelial cell	1	0.0118	0.0118	0.0118	0.9986
+del216_drop3p	diencephalon	1	0.0046	0.0046	0.0046	0.9815
+del216_drop3p	dorsolateral prefrontal cortex	2	-0.0062	-0.0076	-0.0049	-0.9824
+del216_drop3p	ectocervix	1	0.0126	0.0126	0.0126	0.9977
+del216_drop3p	ectodermal cell	1	0.0215	0.0215	0.0215	0.9994
+del216_drop3p	endocervix	1	0.0103	0.0103	0.0103	0.9967
+del216_drop3p	endocrine pancreas	1	-0.0126	-0.0126	-0.0126	-0.9983
+del216_drop3p	endodermal cell	2	0.0092	0.0023	0.016	0.9409
+del216_drop3p	endothelial cell	1	0.0084	0.0084	0.0084	0.9968
+del216_drop3p	endothelial cell of coronary artery	1	0.0126	0.0126	0.0126	0.9988
+del216_drop3p	endothelial cell of umbilical vein	2	0.0219	0.0134	0.0304	0.9992
+del216_drop3p	epithelial cell of alveolus of lung	1	0.0193	0.0193	0.0193	0.9994
+del216_drop3p	epithelial cell of proximal tubule	1	-0.0092	-0.0092	-0.0092	-0.9973
+del216_drop3p	epithelial cell of umbilical artery	1	0.0093	0.0093	0.0093	0.9973
+del216_drop3p	esophagus	1	-0.0049	-0.0049	-0.0049	-0.9742
+del216_drop3p	esophagus mucosa	1	-0.0121	-0.0121	-0.0121	-0.9979
+del216_drop3p	esophagus muscularis mucosa	2	0.0205	0.016	0.0249	0.9992
+del216_drop3p	esophagus squamous epithelium	2	-0.0099	-0.0102	-0.0097	-0.996
+del216_drop3p	fallopian tube	1	0.0062	0.0062	0.0062	0.9859
+del216_drop3p	fibroblast derived cell line	1	0.014	0.014	0.014	0.9983
+del216_drop3p	fibroblast of dermis	1	0.0255	0.0255	0.0255	0.9996
+del216_drop3p	fibroblast of lung	2	0.0227	0.0157	0.0296	0.9994
+del216_drop3p	fibroblast of skin of abdomen	1	0.0271	0.0271	0.0271	0.9996
+del216_drop3p	fibroblast of skin of back	1	0.0227	0.0227	0.0227	0.9995
+del216_drop3p	fibroblast of skin of scalp	1	0.0251	0.0251	0.0251	0.9995
+del216_drop3p	fibroblast of the aortic adventitia	1	0.0154	0.0154	0.0154	0.9992
+del216_drop3p	fibroblast of villous mesenchyme	1	0.0177	0.0177	0.0177	0.9994
+del216_drop3p	forelimb muscle	1	0.0352	0.0352	0.0352	0.9996
+del216_drop3p	foreskin fibroblast	1	0.0141	0.0141	0.0141	0.999
+del216_drop3p	foreskin keratinocyte	2	-0.0058	-0.0094	-0.0022	-0.9339
+del216_drop3p	foreskin melanocyte	1	0.0113	0.0113	0.0113	0.998
+del216_drop3p	frontal cortex	2	0.0025	-0.0038	0.0088	0.0275
+del216_drop3p	gastrocnemius medialis	2	0.0025	0.0009	0.0041	0.8106
+del216_drop3p	gastroesophageal sphincter	2	0.0202	0.015	0.0255	0.9991
+del216_drop3p	glomerular endothelial cell	1	0.0123	0.0123	0.0123	0.9986
+del216_drop3p	glutamatergic neuron	1	-0.0008	-0.0008	-0.0008	-0.6324
+del216_drop3p	hair follicle dermal papilla cell	1	0.0175	0.0175	0.0175	0.9993
+del216_drop3p	hair follicular keratinocyte	1	-0.0198	-0.0198	-0.0198	-0.9993
+del216_drop3p	heart	2	0.0218	0.0205	0.0232	0.9993
+del216_drop3p	heart left ventricle	2	0.0269	0.0255	0.0283	0.9995
+del216_drop3p	heart right ventricle	2	0.0175	0.0163	0.0188	0.999
+del216_drop3p	hematopoietic multipotent progenitor cell	1	-0.0399	-0.0399	-0.0399	-0.9997
+del216_drop3p	hepatocyte	2	0.0047	-0.0061	0.0155	0.0066
+del216_drop3p	hindlimb muscle	1	0.0345	0.0345	0.0345	0.9996
+del216_drop3p	hypothalamus	1	-0.0	-0.0	-0.0	-0.0
+del216_drop3p	immature natural killer cell	1	-0.2589	-0.2589	-0.2589	-1.0
+del216_drop3p	keratinocyte	1	-0.009	-0.009	-0.009	-0.9957
+del216_drop3p	kidney	2	-0.0012	-0.018	0.0156	-0.0003
+del216_drop3p	kidney epithelial cell	1	-0.017	-0.017	-0.017	-0.9992
+del216_drop3p	large intestine	1	0.0038	0.0038	0.0038	0.9481
+del216_drop3p	left cardiac atrium	1	0.0157	0.0157	0.0157	0.999
+del216_drop3p	left colon	1	-0.0104	-0.0104	-0.0104	-0.9965
+del216_drop3p	left kidney	1	0.026	0.026	0.026	0.9993
+del216_drop3p	left lobe of liver	1	-0.0183	-0.0183	-0.0183	-0.9989
+del216_drop3p	left lung	2	0.0114	-0.0066	0.0294	0.004
+del216_drop3p	left renal cortex interstitium	1	0.0267	0.0267	0.0267	0.9994
+del216_drop3p	left renal pelvis	1	0.0298	0.0298	0.0298	0.9995
+del216_drop3p	left ventricle myocardium	1	0.0113	0.0113	0.0113	0.9971
+del216_drop3p	left ventricle myocardium inferior	1	0.0212	0.0212	0.0212	0.9993
+del216_drop3p	left ventricle myocardium superior	1	0.0222	0.0222	0.0222	0.9994
+del216_drop3p	liver	2	-0.0096	-0.0156	-0.0035	-0.9698
+del216_drop3p	lower leg skin	2	-0.0226	-0.0268	-0.0184	-0.9991
+del216_drop3p	lower lobe of left lung	1	-0.0069	-0.0069	-0.0069	-0.9918
+del216_drop3p	lower lobe of right lung	1	-0.0104	-0.0104	-0.0104	-0.9972
+del216_drop3p	luminal epithelial cell of mammary gland	1	-0.0299	-0.0299	-0.0299	-0.9995
+del216_drop3p	lung	2	0.0085	-0.0036	0.0206	0.0284
+del216_drop3p	lung microvascular endothelial cell	1	0.0133	0.0133	0.0133	0.9989
+del216_drop3p	lymphoblast	1	-0.0758	-0.0758	-0.0758	-0.9998
+del216_drop3p	mammary epithelial cell	2	-0.0043	-0.0064	-0.0022	-0.9357
+del216_drop3p	mammary microvascular endothelial cell	1	0.0138	0.0138	0.0138	0.9988
+del216_drop3p	mammary stem cell	1	-0.0424	-0.0424	-0.0424	-0.9997
+del216_drop3p	melanocyte of skin	1	0.0021	0.0021	0.0021	0.883
+del216_drop3p	mesangial cell	1	0.0088	0.0088	0.0088	0.9974
+del216_drop3p	mesenchymal stem cell	1	0.0184	0.0184	0.0184	0.9993
+del216_drop3p	mesenchymal stem cell of Wharton's jelly	1	0.007	0.007	0.007	0.9954
+del216_drop3p	mesenchymal stem cell of adipose	1	0.0153	0.0153	0.0153	0.9991
+del216_drop3p	mesenchymal stem cell of the bone marrow	1	0.0034	0.0034	0.0034	0.956
+del216_drop3p	mesendoderm	1	0.0023	0.0023	0.0023	0.8629
+del216_drop3p	mesenteric fat pad	1	0.0166	0.0166	0.0166	0.9991
+del216_drop3p	mesodermal cell	1	0.0109	0.0109	0.0109	0.9975
+del216_drop3p	mesothelial cell of epicardium	1	0.0086	0.0086	0.0086	0.9971
+del216_drop3p	metanephros	1	0.0195	0.0195	0.0195	0.9993
+del216_drop3p	mole	1	0.0263	0.0263	0.0263	0.9996
+del216_drop3p	mononuclear cell	1	-0.3252	-0.3252	-0.3252	-1.0
+del216_drop3p	motor neuron	1	0.0011	0.0011	0.0011	0.6713
+del216_drop3p	mucosa of descending colon	1	-0.0069	-0.0069	-0.0069	-0.9903
+del216_drop3p	mucosa of gallbladder	1	-0.0073	-0.0073	-0.0073	-0.9933
+del216_drop3p	muscle of arm	1	0.0353	0.0353	0.0353	0.9996
+del216_drop3p	muscle of back	1	0.0335	0.0335	0.0335	0.9996
+del216_drop3p	muscle of leg	1	0.0346	0.0346	0.0346	0.9997
+del216_drop3p	muscle of trunk	1	0.0296	0.0296	0.0296	0.9996
+del216_drop3p	myocyte	2	0.0119	0.0114	0.0123	0.9981
+del216_drop3p	myoepithelial cell of mammary gland	1	-0.0362	-0.0362	-0.0362	-0.9996
+del216_drop3p	myometrial cell	1	0.0173	0.0173	0.0173	0.9993
+del216_drop3p	myotube	1	0.023	0.023	0.023	0.9995
+del216_drop3p	naive B cell	1	-0.1961	-0.1961	-0.1961	-1.0
+del216_drop3p	naive thymus-derived CD4-positive, alpha-beta T cell	2	-0.2836	-0.3259	-0.2413	-1.0
+del216_drop3p	naive thymus-derived CD8-positive, alpha-beta T cell	2	-0.2869	-0.3252	-0.2486	-1.0
+del216_drop3p	nasal cavity respiratory epithelium epithelial cell of viscerocranial mucosa	1	-0.0166	-0.0166	-0.0166	-0.9991
+del216_drop3p	natural killer cell	2	-0.2324	-0.2412	-0.2237	-1.0
+del216_drop3p	neural cell	1	-0.0012	-0.0012	-0.0012	-0.7069
+del216_drop3p	neural crest cell	1	0.0137	0.0137	0.0137	0.999
+del216_drop3p	neural progenitor cell	1	0.0235	0.0235	0.0235	0.9995
+del216_drop3p	neuronal stem cell	1	0.0256	0.0256	0.0256	0.9995
+del216_drop3p	neurosphere	1	0.0275	0.0275	0.0275	0.9996
+del216_drop3p	nucleus accumbens	1	-0.003	-0.003	-0.003	-0.8937
+del216_drop3p	occipital lobe	1	0.007	0.007	0.007	0.9954
+del216_drop3p	omental fat pad	2	0.0003	-0.0006	0.0012	0.1631
+del216_drop3p	osteoblast	1	0.0117	0.0117	0.0117	0.9988
+del216_drop3p	osteocyte	1	0.0141	0.0141	0.0141	0.9991
+del216_drop3p	outer medulla of kidney	1	-0.0045	-0.0045	-0.0045	-0.953
+del216_drop3p	ovary	3	0.0057	-0.0031	0.0165	0.3343
+del216_drop3p	pancreas	2	-0.0158	-0.0159	-0.0157	-0.9988
+del216_drop3p	parietal lobe	1	0.0096	0.0096	0.0096	0.9981
+del216_drop3p	pericardium fibroblast	1	0.0256	0.0256	0.0256	0.9996
+del216_drop3p	peripheral blood mononuclear cell	1	-0.2018	-0.2018	-0.2018	-1.0
+del216_drop3p	pituitary gland	1	-0.0131	-0.0131	-0.0131	-0.9981
+del216_drop3p	placenta	2	0.0128	-0.0066	0.0321	0.0066
+del216_drop3p	placental basal plate	1	0.0136	0.0136	0.0136	0.9981
+del216_drop3p	placental epithelial cell	1	0.0266	0.0266	0.0266	0.9996
+del216_drop3p	placental pericyte	1	-0.0034	-0.0034	-0.0034	-0.953
+del216_drop3p	posterior vena cava	1	0.0205	0.0205	0.0205	0.9994
+del216_drop3p	progenitor cell of endocrine pancreas	1	0.0053	0.0053	0.0053	0.9849
+del216_drop3p	prostate gland	2	0.0043	0.0027	0.006	0.9399
+del216_drop3p	psoas muscle	2	0.0064	0.002	0.0108	0.9281
+del216_drop3p	pulmonary artery endothelial cell	1	0.0155	0.0155	0.0155	0.9991
+del216_drop3p	putamen	1	0.0005	0.0005	0.0005	0.371
+del216_drop3p	regular cardiac myocyte	1	-0.0023	-0.0023	-0.0023	-0.9065
+del216_drop3p	renal cortex interstitium	1	0.0256	0.0256	0.0256	0.9994
+del216_drop3p	renal cortical epithelial cell	1	-0.0065	-0.0065	-0.0065	-0.992
+del216_drop3p	renal pelvis	1	0.0258	0.0258	0.0258	0.9994
+del216_drop3p	right atrium auricular region	2	0.0171	0.0117	0.0225	0.9984
+del216_drop3p	right cardiac atrium	2	0.0223	0.0175	0.027	0.9993
+del216_drop3p	right lobe of liver	2	-0.017	-0.0251	-0.009	-0.9971
+del216_drop3p	right lung	1	0.0317	0.0317	0.0317	0.9996
+del216_drop3p	right renal cortex interstitium	1	0.03	0.03	0.03	0.9995
+del216_drop3p	right renal pelvis	1	0.0277	0.0277	0.0277	0.9995
+del216_drop3p	sciatic nerve	1	0.0067	0.0067	0.0067	0.9935
+del216_drop3p	sigmoid colon	3	0.0134	0.0004	0.026	0.7697
+del216_drop3p	skeletal muscle myoblast	2	0.0198	0.0178	0.0218	0.9993
+del216_drop3p	skeletal muscle satellite cell	1	0.0034	0.0034	0.0034	0.9602
+del216_drop3p	skeletal muscle tissue	1	0.0289	0.0289	0.0289	0.9997
+del216_drop3p	skin of body	1	0.0178	0.0178	0.0178	0.9993
+del216_drop3p	small intestine	1	-0.0369	-0.0369	-0.0369	-0.9996
+del216_drop3p	smooth muscle cell	2	0.0069	-0.0031	0.017	0.0393
+del216_drop3p	smooth muscle cell of bladder	1	0.0147	0.0147	0.0147	0.9991
+del216_drop3p	smooth muscle cell of the coronary artery	1	0.0067	0.0067	0.0067	0.9939
+del216_drop3p	smooth muscle cell of the pulmonary artery	1	0.0118	0.0118	0.0118	0.9987
+del216_drop3p	smooth muscle cell of the umbilical artery	1	0.0049	0.0049	0.0049	0.9854
+del216_drop3p	smooth muscle cell of trachea	1	0.0187	0.0187	0.0187	0.9994
+del216_drop3p	spinal cord	2	0.0166	0.0116	0.0216	0.9991
+del216_drop3p	spleen	3	-0.0812	-0.0877	-0.0739	-0.9999
+del216_drop3p	stomach	3	-0.0022	-0.0088	0.005	-0.3053
+del216_drop3p	subcutaneous adipose tissue	2	0.0158	0.0115	0.0201	0.9983
+del216_drop3p	subcutaneous preadipocyte	1	0.0075	0.0075	0.0075	0.9962
+del216_drop3p	substantia nigra	1	0.0083	0.0083	0.0083	0.9941
+del216_drop3p	suprapubic skin	2	-0.0263	-0.0316	-0.0211	-0.9993
+del216_drop3p	temporal lobe	1	0.014	0.014	0.014	0.9992
+del216_drop3p	testis	3	0.0017	-0.0032	0.0079	0.0874
+del216_drop3p	thoracic aorta	1	0.0006	0.0006	0.0006	0.59
+del216_drop3p	thoracic aorta endothelial cell	1	0.0137	0.0137	0.0137	0.999
+del216_drop3p	thymus	1	-0.1209	-0.1209	-0.1209	-0.9999
+del216_drop3p	thyroid gland	2	0.0042	-0.002	0.0104	0.1016
+del216_drop3p	tibial artery	1	0.0162	0.0162	0.0162	0.9988
+del216_drop3p	tibial nerve	2	0.0116	0.0115	0.0118	0.998
+del216_drop3p	tongue	1	0.0307	0.0307	0.0307	0.9997
+del216_drop3p	tracheal epithelial cell	1	-0.0223	-0.0223	-0.0223	-0.9995
+del216_drop3p	transverse colon	2	-0.0085	-0.0152	-0.0017	-0.8835
+del216_drop3p	trophoblast	1	0.0115	0.0115	0.0115	0.9977
+del216_drop3p	trophoblast cell	1	0.0139	0.0139	0.0139	0.9985
+del216_drop3p	type B pancreatic cell	1	0.0027	0.0027	0.0027	0.9255
+del216_drop3p	umbilical cord	1	0.0247	0.0247	0.0247	0.9998
+del216_drop3p	upper lobe of left lung	2	-0.0139	-0.0163	-0.0115	-0.9983
+del216_drop3p	upper lobe of right lung	1	-0.0109	-0.0109	-0.0109	-0.9976
+del216_drop3p	ureter	1	-0.0039	-0.0039	-0.0039	-0.964
+del216_drop3p	urinary bladder	3	0.0222	0.0089	0.0335	0.9982
+del216_drop3p	uterine smooth muscle cell	1	0.0042	0.0042	0.0042	0.9774
+del216_drop3p	uterus	2	0.0158	0.0127	0.019	0.9987
+del216_drop3p	vagina	2	-0.0018	-0.0068	0.0033	-0.0347
+del216_drop3p	vein endothelial cell	1	0.0125	0.0125	0.0125	0.9986
+del216_drop3p	venous blood	1	-0.142	-0.142	-0.142	-0.9999
+del217	A172	1	0.0077	0.0077	0.0077	0.995
+del217	A375	1	-0.0152	-0.0152	-0.0152	-0.9987
+del217	A549	1	-0.003	-0.003	-0.003	-0.9205
+del217	A673	1	0.0011	0.0011	0.0011	0.7314
+del217	AG04450	1	0.0272	0.0272	0.0272	0.9996
+del217	Ammon's horn	1	0.0044	0.0044	0.0044	0.9602
+del217	B cell	2	-0.1435	-0.148	-0.1389	-1.0
+del217	BE2C	1	-0.0172	-0.0172	-0.0172	-0.9988
+del217	BJ	1	0.036	0.036	0.036	0.9997
+del217	BLaER1	1	-0.0114	-0.0114	-0.0114	-0.9977
+del217	C1 segment of cervical spinal cord	1	0.0142	0.0142	0.0142	0.9984
+del217	CD14-positive monocyte	1	-0.0475	-0.0475	-0.0475	-0.9997
+del217	CD4-positive, CD25-positive, alpha-beta regulatory T cell	2	-0.3191	-0.3217	-0.3165	-1.0
+del217	CD4-positive, alpha-beta T cell	2	-0.2878	-0.3268	-0.2488	-1.0
+del217	CD4-positive, alpha-beta memory T cell	2	-0.2802	-0.3201	-0.2403	-1.0
+del217	CD8-positive, alpha-beta T cell	2	-0.2841	-0.3301	-0.238	-1.0
+del217	CD8-positive, alpha-beta memory T cell	2	-0.2285	-0.3026	-0.1544	-1.0
+del217	Caco-2	1	-0.0116	-0.0116	-0.0116	-0.9981
+del217	Caki2	1	-0.0026	-0.0026	-0.0026	-0.9065
+del217	Calu3	1	-0.0142	-0.0142	-0.0142	-0.9986
+del217	Daoy	1	-0.013	-0.013	-0.013	-0.9985
+del217	G401	1	0.0126	0.0126	0.0126	0.9988
+del217	GM12878	2	-0.0615	-0.0625	-0.0604	-0.9998
+del217	GM12891	1	-0.055	-0.055	-0.055	-0.9997
+del217	GM12892	1	-0.0567	-0.0567	-0.0567	-0.9998
+del217	GM23248	2	0.0112	0.0075	0.0148	0.9962
+del217	GM23338	2	0.0007	-0.0008	0.0022	0.1968
+del217	H1	2	0.0082	0.0032	0.0133	0.9655
+del217	H4	1	0.0041	0.0041	0.0041	0.964
+del217	H7	1	0.0084	0.0084	0.0084	0.9955
+del217	H9	1	-0.0036	-0.0036	-0.0036	-0.9481
+del217	HCT116	2	-0.0184	-0.0213	-0.0156	-0.999
+del217	HFFc6	1	0.017	0.017	0.017	0.9992
+del217	HT-29	1	-0.007	-0.007	-0.007	-0.9926
+del217	HT1080	2	-0.0171	-0.0203	-0.0139	-0.9988
+del217	HUES64	1	0.013	0.013	0.013	0.9981
+del217	HeLa-S3	1	-0.0143	-0.0143	-0.0143	-0.9985
+del217	HepG2	2	-0.018	-0.028	-0.008	-0.9966
+del217	IMR-90	2	0.0225	0.0195	0.0255	0.9995
+del217	IgD-negative memory B cell	1	-0.1893	-0.1893	-0.1893	-1.0
+del217	Jurkat, Clone E6-1	1	-0.0618	-0.0618	-0.0618	-0.9998
+del217	K562	2	-0.0045	-0.0075	-0.0015	-0.8638
+del217	Karpas-422	1	-0.0517	-0.0517	-0.0517	-0.9998
+del217	LHCN-M2	2	0.0232	0.0161	0.0302	0.9993
+del217	M059J	1	0.0124	0.0124	0.0124	0.9985
+del217	MCF 10A	1	-0.0186	-0.0186	-0.0186	-0.9992
+del217	MCF-7	2	-0.0035	-0.0085	0.0015	-0.1106
+del217	MG63	1	0.0185	0.0185	0.0185	0.9994
+del217	NCI-H460	2	-0.0258	-0.0276	-0.024	-0.9994
+del217	OCI-LY7	1	-0.056	-0.056	-0.056	-0.9998
+del217	PC-3	1	0.0026	0.0026	0.0026	0.9152
+del217	PC-9	1	0.0031	0.0031	0.0031	0.9325
+del217	PFSK-1	1	-0.0209	-0.0209	-0.0209	-0.9992
+del217	Panc1	2	-0.0036	-0.0071	-0.0	-0.5398
+del217	Peyer's patch	2	-0.0397	-0.0479	-0.0314	-0.9996
+del217	Purkinje cell	1	-0.0149	-0.0149	-0.0149	-0.9985
+del217	RPMI7951	1	0.014	0.014	0.014	0.9988
+del217	Right ventricle myocardium inferior	1	0.0163	0.0163	0.0163	0.999
+del217	Right ventricle myocardium superior	1	0.0164	0.0164	0.0164	0.999
+del217	SJCRH30	1	0.0074	0.0074	0.0074	0.9955
+del217	SJSA1	1	0.0158	0.0158	0.0158	0.9992
+del217	SK-MEL-5	2	-0.0201	-0.0225	-0.0177	-0.9991
+del217	SK-N-DZ	1	-0.0066	-0.0066	-0.0066	-0.9885
+del217	SK-N-SH	1	0.0132	0.0132	0.0132	0.9986
+del217	T-cell	2	-0.2544	-0.2774	-0.2314	-1.0
+del217	T-helper 17 cell	1	-0.2907	-0.2907	-0.2907	-1.0
+del217	U-87 MG	1	-0.0049	-0.0049	-0.0049	-0.9602
+del217	WTC11	1	0.0003	0.0003	0.0003	0.3856
+del217	adipose tissue	1	0.0223	0.0223	0.0223	0.9994
+del217	adrenal gland	3	0.0077	0.0025	0.0162	0.9465
+del217	airway epithelial cell	1	0.0166	0.0166	0.0166	0.9992
+del217	amnion	1	0.0251	0.0251	0.0251	0.9995
+del217	amygdala	1	0.0077	0.0077	0.0077	0.9928
+del217	anterior cingulate cortex	1	0.0021	0.0021	0.0021	0.8127
+del217	anterior lingual gland	1	0.0009	0.0009	0.0009	0.5558
+del217	aorta	2	0.0123	0.0106	0.014	0.9985
+del217	aortic smooth muscle cell	1	0.0189	0.0189	0.0189	0.9994
+del217	articular chondrocyte of knee joint	1	0.0335	0.0335	0.0335	0.9997
+del217	ascending aorta	2	0.0146	0.0125	0.0166	0.9987
+del217	astrocyte	1	0.0205	0.0205	0.0205	0.9995
+del217	bladder microvascular endothelial cell	1	0.0246	0.0246	0.0246	0.9996
+del217	body of pancreas	2	-0.0073	-0.0079	-0.0067	-0.9923
+del217	brain	1	0.0077	0.0077	0.0077	0.9928
+del217	breast epithelium	2	0.0104	0.0094	0.0113	0.9971
+del217	bronchial epithelial cell	1	-0.0013	-0.0013	-0.0013	-0.7753
+del217	bronchial smooth muscle cell	1	0.0213	0.0213	0.0213	0.9995
+del217	bronchus fibroblast of lung	1	0.026	0.026	0.026	0.9996
+del217	camera-type eye	1	0.0159	0.0159	0.0159	0.9993
+del217	cardiac atrium fibroblast	1	0.0185	0.0185	0.0185	0.9994
+del217	cardiac muscle cell	2	0.0169	0.0106	0.0232	0.9984
+del217	cardiac septum	1	0.0116	0.0116	0.0116	0.9981
+del217	cardiac ventricle fibroblast	1	0.0299	0.0299	0.0299	0.9997
+del217	caudate nucleus	1	0.0051	0.0051	0.0051	0.9733
+del217	cerebellar hemisphere	1	-0.013	-0.013	-0.013	-0.9979
+del217	cerebellum	3	0.0032	-0.0117	0.012	0.3326
+del217	chondrocyte	1	0.0238	0.0238	0.0238	0.9996
+del217	chorion	1	0.0205	0.0205	0.0205	0.9991
+del217	chorionic villus	1	0.0245	0.0245	0.0245	0.9993
+del217	colonic mucosa	1	-0.0016	-0.0016	-0.0016	-0.7884
+del217	common myeloid progenitor, CD34-positive	1	-0.0257	-0.0257	-0.0257	-0.9992
+del217	coronary artery	1	0.0105	0.0105	0.0105	0.997
+del217	cortex of kidney	1	-0.0	-0.0	-0.0	-0.0508
+del217	dermis blood vessel endothelial cell	1	0.0229	0.0229	0.0229	0.9995
+del217	dermis lymphatic vessel endothelial cell	1	0.018	0.018	0.018	0.9993
+del217	dermis microvascular lymphatic vessel endothelial cell	1	0.0233	0.0233	0.0233	0.9995
+del217	diencephalon	1	0.0051	0.0051	0.0051	0.9868
+del217	dorsolateral prefrontal cortex	2	-0.0039	-0.0058	-0.0021	-0.8949
+del217	ectocervix	1	0.0143	0.0143	0.0143	0.9983
+del217	ectodermal cell	1	0.0222	0.0222	0.0222	0.9994
+del217	endocervix	1	0.0105	0.0105	0.0105	0.9969
+del217	endocrine pancreas	1	-0.0132	-0.0132	-0.0132	-0.9984
+del217	endodermal cell	2	0.011	0.0056	0.0164	0.9929
+del217	endothelial cell	1	0.0125	0.0125	0.0125	0.9986
+del217	endothelial cell of coronary artery	1	0.0221	0.0221	0.0221	0.9995
+del217	endothelial cell of umbilical vein	2	0.0285	0.0199	0.0371	0.9996
+del217	epithelial cell of alveolus of lung	1	0.0209	0.0209	0.0209	0.9995
+del217	epithelial cell of proximal tubule	1	-0.0014	-0.0014	-0.0014	-0.8069
+del217	epithelial cell of umbilical artery	1	0.0193	0.0193	0.0193	0.9994
+del217	esophagus	1	0.006	0.006	0.006	0.9864
+del217	esophagus mucosa	1	0.0035	0.0035	0.0035	0.9514
+del217	esophagus muscularis mucosa	2	0.0203	0.0157	0.0248	0.9991
+del217	esophagus squamous epithelium	2	0.0011	0.0002	0.002	0.5716
+del217	fallopian tube	1	0.0068	0.0068	0.0068	0.9896
+del217	fibroblast derived cell line	1	0.0171	0.0171	0.0171	0.9988
+del217	fibroblast of dermis	1	0.0279	0.0279	0.0279	0.9996
+del217	fibroblast of lung	2	0.0261	0.0208	0.0313	0.9996
+del217	fibroblast of skin of abdomen	1	0.0271	0.0271	0.0271	0.9996
+del217	fibroblast of skin of back	1	0.0248	0.0248	0.0248	0.9995
+del217	fibroblast of skin of scalp	1	0.0262	0.0262	0.0262	0.9995
+del217	fibroblast of the aortic adventitia	1	0.0181	0.0181	0.0181	0.9993
+del217	fibroblast of villous mesenchyme	1	0.0241	0.0241	0.0241	0.9996
+del217	forelimb muscle	1	0.0334	0.0334	0.0334	0.9996
+del217	foreskin fibroblast	1	0.0143	0.0143	0.0143	0.999
+del217	foreskin keratinocyte	2	0.0058	0.0043	0.0074	0.9808
+del217	foreskin melanocyte	1	0.0109	0.0109	0.0109	0.9978
+del217	frontal cortex	2	0.0038	-0.0013	0.009	0.1728
+del217	gastrocnemius medialis	2	-0.0012	-0.0029	0.0005	-0.2603
+del217	gastroesophageal sphincter	2	0.0199	0.0145	0.0253	0.9991
+del217	glomerular endothelial cell	1	0.0197	0.0197	0.0197	0.9994
+del217	glutamatergic neuron	1	-0.0032	-0.0032	-0.0032	-0.9408
+del217	hair follicle dermal papilla cell	1	0.0216	0.0216	0.0216	0.9995
+del217	hair follicular keratinocyte	1	-0.0065	-0.0065	-0.0065	-0.9906
+del217	heart	2	0.0158	0.015	0.0167	0.9988
+del217	heart left ventricle	2	0.0214	0.0188	0.0241	0.9993
+del217	heart right ventricle	2	0.0129	0.0124	0.0134	0.9983
+del217	hematopoietic multipotent progenitor cell	1	-0.0341	-0.0341	-0.0341	-0.9996
+del217	hepatocyte	2	0.0095	-0.0026	0.0215	0.0582
+del217	hindlimb muscle	1	0.0331	0.0331	0.0331	0.9996
+del217	hypothalamus	1	0.0026	0.0026	0.0026	0.8671
+del217	immature natural killer cell	1	-0.2509	-0.2509	-0.2509	-1.0
+del217	keratinocyte	1	0.0064	0.0064	0.0064	0.9885
+del217	kidney	2	0.0076	-0.0107	0.026	0.001
+del217	kidney epithelial cell	1	-0.0096	-0.0096	-0.0096	-0.9976
+del217	large intestine	1	0.0077	0.0077	0.0077	0.993
+del217	left cardiac atrium	1	0.0119	0.0119	0.0119	0.9982
+del217	left colon	1	-0.0025	-0.0025	-0.0025	-0.883
+del217	left kidney	1	0.0303	0.0303	0.0303	0.9995
+del217	left lobe of liver	1	-0.0103	-0.0103	-0.0103	-0.9961
+del217	left lung	2	0.0157	-0.0005	0.0318	0.2399
+del217	left renal cortex interstitium	1	0.0305	0.0305	0.0305	0.9995
+del217	left renal pelvis	1	0.0328	0.0328	0.0328	0.9996
+del217	left ventricle myocardium	1	0.0093	0.0093	0.0093	0.9954
+del217	left ventricle myocardium inferior	1	0.0133	0.0133	0.0133	0.9984
+del217	left ventricle myocardium superior	1	0.0149	0.0149	0.0149	0.9988
+del217	liver	2	-0.0002	-0.0048	0.0043	-0.0063
+del217	lower leg skin	2	-0.0131	-0.0153	-0.0108	-0.9975
+del217	lower lobe of left lung	1	-0.0	-0.0	-0.0	-0.1513
+del217	lower lobe of right lung	1	-0.0032	-0.0032	-0.0032	-0.9368
+del217	luminal epithelial cell of mammary gland	1	-0.023	-0.023	-0.023	-0.9993
+del217	lung	2	0.0165	0.004	0.0289	0.9786
+del217	lung microvascular endothelial cell	1	0.0251	0.0251	0.0251	0.9996
+del217	lymphoblast	1	-0.0627	-0.0627	-0.0627	-0.9998
+del217	mammary epithelial cell	2	0.0064	0.0062	0.0065	0.9907
+del217	mammary microvascular endothelial cell	1	0.0222	0.0222	0.0222	0.9995
+del217	mammary stem cell	1	-0.0415	-0.0415	-0.0415	-0.9997
+del217	melanocyte of skin	1	0.0065	0.0065	0.0065	0.9928
+del217	mesangial cell	1	0.0159	0.0159	0.0159	0.9993
+del217	mesenchymal stem cell	1	0.0189	0.0189	0.0189	0.9993
+del217	mesenchymal stem cell of Wharton's jelly	1	0.0112	0.0112	0.0112	0.9986
+del217	mesenchymal stem cell of adipose	1	0.0166	0.0166	0.0166	0.9992
+del217	mesenchymal stem cell of the bone marrow	1	0.0069	0.0069	0.0069	0.9943
+del217	mesendoderm	1	0.0045	0.0045	0.0045	0.9651
+del217	mesenteric fat pad	1	0.0191	0.0191	0.0191	0.9993
+del217	mesodermal cell	1	0.0125	0.0125	0.0125	0.9982
+del217	mesothelial cell of epicardium	1	0.0117	0.0117	0.0117	0.9985
+del217	metanephros	1	0.0251	0.0251	0.0251	0.9996
+del217	mole	1	0.0269	0.0269	0.0269	0.9996
+del217	mononuclear cell	1	-0.319	-0.319	-0.319	-1.0
+del217	motor neuron	1	0.0021	0.0021	0.0021	0.897
+del217	mucosa of descending colon	1	-0.0022	-0.0022	-0.0022	-0.8671
+del217	mucosa of gallbladder	1	-0.0024	-0.0024	-0.0024	-0.8902
+del217	muscle of arm	1	0.0337	0.0337	0.0337	0.9996
+del217	muscle of back	1	0.0316	0.0316	0.0316	0.9996
+del217	muscle of leg	1	0.0357	0.0357	0.0357	0.9997
+del217	muscle of trunk	1	0.0299	0.0299	0.0299	0.9996
+del217	myocyte	2	0.0174	0.0162	0.0187	0.9991
+del217	myoepithelial cell of mammary gland	1	-0.03	-0.03	-0.03	-0.9995
+del217	myometrial cell	1	0.0208	0.0208	0.0208	0.9995
+del217	myotube	1	0.0305	0.0305	0.0305	0.9996
+del217	naive B cell	1	-0.1809	-0.1809	-0.1809	-1.0
+del217	naive thymus-derived CD4-positive, alpha-beta T cell	2	-0.2762	-0.3186	-0.2338	-1.0
+del217	naive thymus-derived CD8-positive, alpha-beta T cell	2	-0.2804	-0.3195	-0.2413	-1.0
+del217	nasal cavity respiratory epithelium epithelial cell of viscerocranial mucosa	1	-0.0021	-0.0021	-0.0021	-0.8902
+del217	natural killer cell	2	-0.2234	-0.2349	-0.2118	-1.0
+del217	neural cell	1	-0.003	-0.003	-0.003	-0.9095
+del217	neural crest cell	1	0.0146	0.0146	0.0146	0.9991
+del217	neural progenitor cell	1	0.0263	0.0263	0.0263	0.9996
+del217	neuronal stem cell	1	0.0255	0.0255	0.0255	0.9995
+del217	neurosphere	1	0.0282	0.0282	0.0282	0.9996
+del217	nucleus accumbens	1	-0.0	-0.0	-0.0	-0.0508
+del217	occipital lobe	1	0.0077	0.0077	0.0077	0.9966
+del217	omental fat pad	2	0.0036	0.0018	0.0053	0.8903
+del217	osteoblast	1	0.0167	0.0167	0.0167	0.9993
+del217	osteocyte	1	0.0187	0.0187	0.0187	0.9994
+del217	outer medulla of kidney	1	0.0017	0.0017	0.0017	0.7392
+del217	ovary	3	0.0065	-0.0002	0.0162	0.53
+del217	pancreas	2	-0.0107	-0.0117	-0.0098	-0.9975
+del217	parietal lobe	1	0.0103	0.0103	0.0103	0.9984
+del217	pericardium fibroblast	1	0.0288	0.0288	0.0288	0.9997
+del217	peripheral blood mononuclear cell	1	-0.1966	-0.1966	-0.1966	-1.0
+del217	pituitary gland	1	-0.0122	-0.0122	-0.0122	-0.9978
+del217	placenta	2	0.026	0.0051	0.0469	0.987
+del217	placental basal plate	1	0.0182	0.0182	0.0182	0.9988
+del217	placental epithelial cell	1	0.0373	0.0373	0.0373	0.9997
+del217	placental pericyte	1	0.0019	0.0019	0.0019	0.8629
+del217	posterior vena cava	1	0.0209	0.0209	0.0209	0.9994
+del217	progenitor cell of endocrine pancreas	1	0.0084	0.0084	0.0084	0.9965
+del217	prostate gland	2	0.0076	0.0049	0.0103	0.9851
+del217	psoas muscle	2	0.0028	-0.0011	0.0068	0.1419
+del217	pulmonary artery endothelial cell	1	0.0256	0.0256	0.0256	0.9996
+del217	putamen	1	0.0045	0.0045	0.0045	0.9627
+del217	regular cardiac myocyte	1	0.0044	0.0044	0.0044	0.9809
+del217	renal cortex interstitium	1	0.0295	0.0295	0.0295	0.9995
+del217	renal cortical epithelial cell	1	0.0064	0.0064	0.0064	0.992
+del217	renal pelvis	1	0.0299	0.0299	0.0299	0.9995
+del217	right atrium auricular region	2	0.0135	0.0097	0.0173	0.9975
+del217	right cardiac atrium	2	0.0182	0.0125	0.0239	0.9989
+del217	right lobe of liver	2	-0.0094	-0.0179	-0.001	-0.8395
+del217	right lung	1	0.0339	0.0339	0.0339	0.9997
+del217	right renal cortex interstitium	1	0.0342	0.0342	0.0342	0.9996
+del217	right renal pelvis	1	0.0318	0.0318	0.0318	0.9996
+del217	sciatic nerve	1	0.0119	0.0119	0.0119	0.9985
+del217	sigmoid colon	3	0.0155	0.0084	0.0252	0.9976
+del217	skeletal muscle myoblast	2	0.0272	0.0243	0.0301	0.9995
+del217	skeletal muscle satellite cell	1	0.007	0.007	0.007	0.9949
+del217	skeletal muscle tissue	1	0.032	0.032	0.032	0.9998
+del217	skin of body	1	0.0241	0.0241	0.0241	0.9996
+del217	small intestine	1	-0.0268	-0.0268	-0.0268	-0.9993
+del217	smooth muscle cell	2	0.0117	-0.0001	0.0235	0.3914
+del217	smooth muscle cell of bladder	1	0.0194	0.0194	0.0194	0.9994
+del217	smooth muscle cell of the coronary artery	1	0.0138	0.0138	0.0138	0.999
+del217	smooth muscle cell of the pulmonary artery	1	0.0171	0.0171	0.0171	0.9993
+del217	smooth muscle cell of the umbilical artery	1	0.0104	0.0104	0.0104	0.9983
+del217	smooth muscle cell of trachea	1	0.022	0.022	0.022	0.9995
+del217	spinal cord	2	0.0191	0.0138	0.0244	0.9993
+del217	spleen	3	-0.075	-0.08	-0.0688	-0.9999
+del217	stomach	3	0.0025	-0.0028	0.0104	-0.0484
+del217	subcutaneous adipose tissue	2	0.0187	0.0133	0.024	0.9988
+del217	subcutaneous preadipocyte	1	0.01	0.01	0.01	0.9983
+del217	substantia nigra	1	0.0125	0.0125	0.0125	0.9979
+del217	suprapubic skin	2	-0.0171	-0.0212	-0.0129	-0.9984
+del217	temporal lobe	1	0.0141	0.0141	0.0141	0.9992
+del217	testis	3	0.0008	-0.0017	0.0051	-0.0985
+del217	thoracic aorta	1	0.0037	0.0037	0.0037	0.9627
+del217	thoracic aorta endothelial cell	1	0.0214	0.0214	0.0214	0.9995
+del217	thymus	1	-0.1127	-0.1127	-0.1127	-0.9999
+del217	thyroid gland	2	0.0097	0.0016	0.0178	0.873
+del217	tibial artery	1	0.0169	0.0169	0.0169	0.9988
+del217	tibial nerve	2	0.0167	0.0156	0.0177	0.9989
+del217	tongue	1	0.0339	0.0339	0.0339	0.9998
+del217	tracheal epithelial cell	1	-0.0059	-0.0059	-0.0059	-0.9903
+del217	transverse colon	2	-0.0046	-0.0088	-0.0005	-0.6831
+del217	trophoblast	1	0.0192	0.0192	0.0192	0.9991
+del217	trophoblast cell	1	0.021	0.021	0.021	0.9992
+del217	type B pancreatic cell	1	0.0074	0.0074	0.0074	0.9952
+del217	umbilical cord	1	0.0284	0.0284	0.0284	0.9998
+del217	upper lobe of left lung	2	-0.0082	-0.0127	-0.0037	-0.9789
+del217	upper lobe of right lung	1	-0.0038	-0.0038	-0.0038	-0.956
+del217	ureter	1	0.003	0.003	0.003	0.9347
+del217	urinary bladder	3	0.0232	0.0096	0.0363	0.9984
+del217	uterine smooth muscle cell	1	0.0096	0.0096	0.0096	0.9981
+del217	uterus	2	0.0178	0.0129	0.0227	0.9988
+del217	vagina	2	0.0036	0.0002	0.007	0.702
+del217	vein endothelial cell	1	0.021	0.021	0.021	0.9994
+del217	venous blood	1	-0.1373	-0.1373	-0.1373	-0.9999

@@ -42,4 +42,3 @@ fig.tight_layout()
 fig.savefig("figures/mn_atac_profile.png", dpi=300)
 np.savez_compressed("processed/mn_atac_profile.npz", x=x, **traces)
 print("wrote figures/mn_atac_profile.png")
-

@@ -1443,3 +1443,90 @@ change there matters," and the proposal now rests on that site. Same for the
 FIMO rescan of the mutant sequences (ACCTTATGT may CREATE a site).
 
 Still ahead of them in order: UCSC annotation checklist, figures, presentation.
+
+## 2026-09-18 — Clean ETS-core replacements: core 1 carries 68% of the
+## full-deletion effect
+
+### Why the earlier mutation test was invalid
+
+scripts/check_created_motifs.py rescanned every mutant with FIMO against the WT
+element. Both of the original edits CREATE sites as well as destroying them:
+
+  core1_etsmut (ACCTTATGT)  lost 19, gained 1   -> Rarb p=8e-5
+  core2_etsmut (ACCTTATGT)  lost 20, gained 3   -> THRA p=5e-6, Rarg, KLF4
+  core1_scramble (TGTAGGCCA) lost 20, gained 4  -> NFIB, ZKSCAN3, ESR1, ESR2
+  core2_scramble (TGTAGGCCA) lost 24, gained 4  -> CTCF x2, Hand1, PLAG1
+
+So the scramble was not a neutral control — it destroyed the ETS site and
+installed several others. Design flaw in the control, caught by the rescan.
+Same trap as the deletion junction; it caught me on the mutation design.
+
+The NEIGHBOR controls did pass: a 3-bp change 9 bp away gave +0.0001 (core 1)
+and -0.0060 (core 2). The effect is position-specific.
+
+### Clean replacements
+
+scripts/find_clean_mutant.py enumerated all 9-mers with WT GC content, no GGA
+or TCC (ETS core, both strands), and >=4 substitutions from WT; screened 300 by
+FIMO for created motifs. Many candidates destroy the full stack (20-24 hits
+lost) and create nothing.
+
+Three used, all gained=0, GC-matched:
+  AGACGAGTG, TCGTATCGG, CGCATCGTA
+
+RESULT (fibroblast mean KLC2; full 217-bp deletion = +0.0339):
+
+  core1_clean1  +0.0232      core2_clean1  +0.0115
+  core1_clean2  +0.0243      core2_clean2  +0.0108
+  core1_clean3  +0.0223      core2_clean3  +0.0087
+  core1_etsmut_OLD +0.0177   core2_etsmut_OLD +0.0054
+
+Three unrelated 9-mers sharing only GC content and the absence of an ETS core
+agree to within 4% at core 1. The model responds to loss of the ETS match, not
+to the replacement sequence.
+
+>> A single 9-bp change at core 1 reproduces 68% of the predicted effect of
+>> deleting the entire 217 bp (+0.023 vs +0.034).
+
+Both OLD values UNDERSTATED the effect — the created sites were partly masking
+it. Use the clean replacement, not ACCTTATGT, in any construct design.
+
+### Alternatives now excluded
+
+  positional ("any change there")   -> neighbor control +0.0001
+  sequence-specific to one mutant   -> three replacements agree within 4%
+  gain-of-function from a new site  -> all three create nothing
+
+### Core 1 and core 2 are NOT equivalent
+
+Core 1 ~+0.023, core 2 ~+0.010, consistent across replacements. The redundant-
+sites model is dead. Two identical 9-mers, different effect sizes, so context
+matters.
+
+### DISCREPANCY to state, not blur
+
+ATAC summits cluster at 66,257,254-267 = CORE 2 (element 168-176).
+AlphaGenome puts twice the effect on CORE 1 (element 109-117 =
+chr11:66,257,194-66,257,202).
+
+The two methods point at DIFFERENT cores. Earlier notes framed this as a
+convergence on "the 3' region" — that was too loose and is withdrawn. Possible
+readings: accessibility and predicted expression effect need not co-localise;
+or the ATAC summit marks the promoter-proximal edge of the accessible domain
+rather than the causal site. Open. Naming it is more credible than smoothing it.
+
+### Peak types were uniform
+
+All 10 experiments used conservative IDR thresholded peaks — the most stringent
+type. No permissive-call confound in the 6/10, 6/6-donor summit result.
+
+### Consequence for Aim 1
+
+Construct series, priority order: wild type; full 216-bp deletion; core 1
+replaced with AGACGAGTG; core 2 replaced; both replaced. Five conditions.
+
+### Still unrun
+
+lncRNA control deletions (blocks the ENSG00000255320 claim); junction
+
+Reconstruction of the 200-bp deletion junction (100 bp from each flank) and FIMO scanning against JASPAR2024 identified no motif spanning the breakpoint. The deletion does not create a new binding site.

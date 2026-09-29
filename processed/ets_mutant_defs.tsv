@@ -1,0 +1,8 @@
+name	el_start	el_stop	wt	mut
+core1_etsmut	109	117	ACCGGATGT	ACCTTATGT
+core1_scramble	109	117	ACCGGATGT	TGTAGGCCA
+core1_neighbor	118	126	GCTTGAGCT	TAGTGAGCT
+core2_etsmut	168	176	ACCGGATGT	ACCTTATGT
+core2_scramble	168	176	ACCGGATGT	TGTAGGCCA
+core2_neighbor	177	185	GACCCCGGG	TCACCCGGG
+both_etsmut	109	176	two cores	ACCTTATGT x2
